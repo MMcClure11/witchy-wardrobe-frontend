@@ -21,7 +21,11 @@ function displayItems(){
 }
 
 function initItems(){
-  ApiService.getAllItems().then(console.log)
+  ApiService.getAllItems().then(items => {
+    items.forEach( item => {
+      new Item(item)
+    })
+  })
 }
 
 
