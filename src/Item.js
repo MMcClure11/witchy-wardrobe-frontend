@@ -6,7 +6,7 @@ class Item {
 
   createCard(){
     const card = document.createElement('div')
-    card.className = "card"
+    card.className = "item-card"
     card.dataset.id = this.item.id
     this.cardContent(card)
     app.appendChild(card)
@@ -18,6 +18,7 @@ class Item {
     itemName.className = 'h2'
     itemName.innerText = name
     const itemImg = document.createElement('img')
+    itemImg.className = 'item-image'
     itemImg.src = image
 
     card.append(itemName, itemImg)

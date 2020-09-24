@@ -3,5 +3,23 @@ body {
     background-size: 100%;
     background-attachment: fixed;
     color: white; 
-    
+}
+
+.item-card {
+  text-align: center;
+  border: grey solid 1px;
+  border-radius: 5px; 
+  padding: 1rem;
+  width: auto;
+  height: auto;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  background-color: rgb(134, 148, 134);
+}
+
+.item-image {
+  height: 15rem;
+  width: auto;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
 }
