@@ -88,13 +88,18 @@ class Item {
     itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
   }
 
-  static handleFormSubmit(item){
-    item.preventDefault()
+  static handleFormSubmit(e){
+    e.preventDefault()
     modal.style.display = "none"
     const newItem = {
-      name: item.target.name.value
+      name: e.target.name.value,
+      category_name: e.target.category.value
     }
-    console.log(newItem)
+    ApiService.postItem(newItem)
+    .then(item => {
+      new Item(item)
+    })
+    e.target.reset()
   }
 
 }
