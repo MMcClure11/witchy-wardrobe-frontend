@@ -56,8 +56,25 @@ class Item {
 
   static createItemForm(){
     modal.style.display = "block"
-    // const itemForm = document.createElement('form')
-    // modalContent.append(itemForm)
+    const itemForm = document.createElement('form')
+    modalContent.append(itemForm)
+    Item.itemFormContent(itemForm)
+  }
+
+  static itemFormContent(itemForm){
+    const itemNameLabel = document.createElement('label')
+    itemNameLabel.innerText = "Item Name:"
+    const itemNameInput = document.createElement('input')
+    itemNameInput.name = "name"
+
+    const categorySelector = document.createElement('select')
+    categorySelector.id = 'select-category'
+    categorySelector.name = 'category'
+
+    const submitBtn = document.createElement('button')
+    submitBtn.innerText = "Submit"
+
+    itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
   }
 
 }
