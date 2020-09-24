@@ -15,9 +15,13 @@ function createAppDiv() {
 
 function displayItems(){
   itemsBtn.addEventListener("click", () => {
-    alert("items button")
-    app.innerHTML = ""
+    app.innerHTML = "";
+    initItems();
   })
+}
+
+function initItems(){
+  ApiService.getAllItems().then(console.log)
 }
 
 
