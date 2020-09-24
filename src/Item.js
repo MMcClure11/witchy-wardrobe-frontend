@@ -59,6 +59,7 @@ class Item {
     const itemForm = document.createElement('form')
     modalContent.append(itemForm)
     Item.itemFormContent(itemForm)
+    itemForm.addEventListener('submit', Item.handleFormSubmit)
   }
 
   static itemFormContent(itemForm){
@@ -85,6 +86,15 @@ class Item {
     submitBtn.innerText = "Submit"
 
     itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
+  }
+
+  static handleFormSubmit(item){
+    item.preventDefault()
+    modal.style.display = "none"
+    const newItem = {
+      name: item.target.name.value
+    }
+    console.log(newItem)
   }
 
 }
