@@ -71,21 +71,24 @@ class Item {
     const categorySelector = document.createElement('select')
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
+    Item.categoryDropdown(categorySelector)
+
+    const submitBtn = document.createElement('button')
+    submitBtn.innerText = "Submit"
+
+    itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
+  }
+
+  static categoryDropdown(categorySelector) {
     ApiService.getAllCategories()
       .then(categories => {
-        categories.forEach( category => {
+        categories.forEach(category => {
           let option = document.createElement('option')
           option.textContent = category.name
           option.value = category.name
           categorySelector.appendChild(option)
         })
       })
-
-
-    const submitBtn = document.createElement('button')
-    submitBtn.innerText = "Submit"
-
-    itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
   }
 
   static handleFormSubmit(e){
@@ -99,7 +102,8 @@ class Item {
     .then(item => {
       new Item(item)
     })
-    e.target.reset()
+    e.target.reset();
+    modal.querySelector("form").remove()
   }
 
 }
