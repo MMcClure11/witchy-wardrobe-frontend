@@ -5,7 +5,6 @@ class Item {
   }
 
   static addItemBtn() {
-    console.log(this)
     const addBtn = document.createElement('button')
     addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
@@ -57,6 +56,8 @@ class Item {
 
   static createItemForm(){
     modal.style.display = "block"
+    // const itemForm = document.createElement('form')
+    // modalContent.append(itemForm)
   }
 
 }
