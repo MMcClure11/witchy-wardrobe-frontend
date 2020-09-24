@@ -19,6 +19,7 @@ function displayItems(){
   itemsBtn.addEventListener("click", () => {
     app.innerHTML = "";
     initItems();
+    Item.addItemBtn();
   })
 }
 
@@ -38,10 +39,3 @@ function initItems(){
     })
   })
 }
-
-
-
-// fetch(`${BASE_URL}/items`)
-//   .then(res => res.json())
-//   .then( items => console.log(items))
-

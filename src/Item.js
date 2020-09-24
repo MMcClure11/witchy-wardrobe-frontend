@@ -4,6 +4,14 @@ class Item {
     this.card = this.createCard()
   }
 
+  static addItemBtn() {
+    console.log(this)
+    const addBtn = document.createElement('button')
+    addBtn.className = "add-button"
+    addBtn.innerText = "Add a New Clothing Item"
+    app.appendChild(addBtn)
+  }
+
   createCard(){
     const card = document.createElement('div')
     card.className = "item-card"
