@@ -14,8 +14,11 @@ class Item {
 
   cardContent(card) {
     const {name, image, color, date_purchased, store, manufacture_location, cost, times_used} = this.item
-    const itemName = document.createElement('h2')
-    itemName.className = 'h2'
+    const itemCategory = document.createElement('h2')
+    itemCategory.className = 'h2'
+    itemCategory.innerText = this.item.category.name
+    const itemName = document.createElement('h3')
+    itemName.className = 'h3'
     itemName.innerText = name
     const itemImg = document.createElement('img')
     itemImg.className = 'item-image'
@@ -33,7 +36,7 @@ class Item {
     const itemTimesUsed = document.createElement('p')
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
-    card.append(itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
+    card.append(itemCategory, itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
   }
 
 }
