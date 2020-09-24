@@ -10,6 +10,8 @@ class Item {
     addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
     app.appendChild(addBtn)
+
+    Item.itemModalHandler(addBtn)
   }
 
   createCard(){
@@ -45,6 +47,16 @@ class Item {
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
     card.append(itemCategory, itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
+  }
+
+  static itemModalHandler(addBtn){
+    addBtn.addEventListener("click", () => {
+      Item.createItemForm()
+    })
+  }
+
+  static createItemForm(){
+    modal.style.display = "block"
   }
 
 }
