@@ -4,4 +4,10 @@ class ApiService {
     return fetch(ITEMS_URL)
     .then(res => res.json())
   }
+
+  static getAllCategories(){
+    return fetch(CATEGORY_URL)
+    .then(res => res.json())
+    .then(console.log)
+  }
 }

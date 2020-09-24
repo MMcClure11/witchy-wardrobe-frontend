@@ -1,5 +1,6 @@
 const BASE_URL = 'http://localhost:3000';
 const ITEMS_URL = `${BASE_URL}/items`;
+const CATEGORY_URL = `${BASE_URL}/categories`
 const body = document.querySelector('body');
 const app = document.createElement('div');
 const itemsBtn = document.querySelector("#items-btn");

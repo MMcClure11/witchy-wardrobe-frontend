@@ -70,7 +70,7 @@ class Item {
     const categorySelector = document.createElement('select')
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
-
+    ApiService.getAllCategories()
     const submitBtn = document.createElement('button')
     submitBtn.innerText = "Submit"
 
