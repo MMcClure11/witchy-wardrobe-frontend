@@ -20,8 +20,20 @@ class Item {
     const itemImg = document.createElement('img')
     itemImg.className = 'item-image'
     itemImg.src = image
+    const itemColor = document.createElement('p')
+    itemColor.innerText = color
+    const itemDatePurchased = document.createElement('p')
+    itemDatePurchased.innerText = `Purchased on ${date_purchased}`
+    const itemStore = document.createElement('p')
+    itemStore.innerText = `From ${store}`
+    const itemManuLoc = document.createElement('p')
+    itemManuLoc.innerText = `Made in: ${manufacture_location}`
+    const itemCost = document.createElement('p')
+    itemCost.innerText = `Cost: $${cost}`
+    const itemTimesUsed = document.createElement('p')
+    itemTimesUsed.innerText = `Worn ${times_used} times.`
 
-    card.append(itemName, itemImg)
+    card.append(itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
   }
 
 }
