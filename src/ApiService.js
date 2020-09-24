@@ -8,6 +8,5 @@ class ApiService {
   static getAllCategories(){
     return fetch(CATEGORY_URL)
     .then(res => res.json())
-    .then(console.log)
   }
 }

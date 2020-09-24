@@ -71,6 +71,16 @@ class Item {
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
     ApiService.getAllCategories()
+      .then(categories => {
+        categories.forEach( category => {
+          let option = document.createElement('option')
+          option.textContent = category.name
+          option.value = category.name
+          categorySelector.appendChild(option)
+        })
+      })
+
+
     const submitBtn = document.createElement('button')
     submitBtn.innerText = "Submit"
 
