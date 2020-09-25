@@ -161,6 +161,13 @@ class Item {
     modal.style.display = "none"
     const newItem = {
       name: e.target.name.value,
+      image: e.target.image.value,
+      color: e.target.color.value,
+      date_purchased: e.target.date_purchased.value,
+      store: e.target.store.value,
+      manufacture_location: e.target.manufacture_location.value,
+      cost: e.target.cost.value,
+      times_used: e.target.times_used.value,
       category_name: e.target.category.value
     }
     ApiService.postItem(newItem)
