@@ -35,6 +35,11 @@ body {
   margin: 1rem;
 }
 
+#delete-btn {
+  float: right;
+  margin-bottom: .5rem;
+}
+
 /*///////////////////////////*/
 
 /* The Modal (background) */

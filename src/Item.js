@@ -27,8 +27,8 @@ class Item {
   cardContent(card) {
     const {name, image, color, date_purchased, store, manufacture_location, cost, times_used} = this.item
    
-    const itemCategory = document.createElement('h3')
-    itemCategory.className = 'h3 card-header'
+    const itemCategory = document.createElement('h4')
+    itemCategory.className = 'h4 card-header'
     itemCategory.innerText = `${this.item.category.name} - ${name}`
     
     const itemImg = document.createElement('img')
@@ -54,12 +54,13 @@ class Item {
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
     const deleteBtn = document.createElement('p')
-    deleteBtn.className = 'card-footer btn'
-    deleteBtn.innerText = `Remove ${name}`
+    deleteBtn.className = 'btn'
+    deleteBtn.id = 'delete-btn'
+    deleteBtn.innerText = "x"
     this.itemDeleteHandler(deleteBtn, card)
 
-    infoDiv.append(itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
-
+    infoDiv.append(itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
+    itemCategory.appendChild(deleteBtn)
     card.append(itemCategory, infoDiv, itemImg)
   }
 
