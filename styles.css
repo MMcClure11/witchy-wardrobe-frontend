@@ -11,27 +11,28 @@ body {
 }
 
 .card {
-  /* text-align: center; */
   border: grey solid 1px;
   border-radius: 5px; 
   padding: 1rem;
-  width: 30rem;
-  height: auto;
+  width: 32rem;
+  height: 23rem;
   display: inline-block;
   margin: 1rem 2rem;
   background-color: rgb(134, 148, 134);
 }
 
 .card-img{
-  height: auto;
+  height: 15rem;
   width: 10rem;
   float: left;
+  margin: 1rem;
   /* border: 1px solid whitesmoke; */
   /* border-radius: 5px; */
 }
 
 #info-div {
   float: right;
+  margin: 1rem;
 }
 
 /*///////////////////////////*/
