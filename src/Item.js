@@ -58,7 +58,7 @@ class Item {
     deleteBtn.className = 'delete item-button'
     deleteBtn.innerText = `Remove ${name}`
     this.itemDeleteHandler(deleteBtn, card)
-    
+
     card.append(itemCategory, itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
   }
 
@@ -88,6 +88,43 @@ class Item {
     const itemNameInput = document.createElement('input')
     itemNameInput.name = "name"
 
+    const itemImageLabel = document.createElement('label')
+    itemImageLabel.innerText = "Item Image:"
+    const itemImageInput = document.createElement('input')
+    itemImageInput.name = "image"
+
+    const itemColorLabel = document.createElement('label')
+    itemColorLabel.innerText = "Item Color:"
+    const itemColorInput = document.createElement('input')
+    itemColorInput.name = "color"
+
+    const itemDatePurchasedLabel = document.createElement('label')
+    itemDatePurchasedLabel.innerText = "Date Purchased:"
+    const itemDatePurchasedInput = document.createElement('input')
+    itemDatePurchasedInput.name = "date_purchased"
+
+    const itemStoreLabel = document.createElement('label')
+    itemStoreLabel.innerText = "Store Purchased From:"
+    const itemStoreInput = document.createElement('input')
+    itemStoreInput.name = "store"
+
+    const itemManuLocLabel = document.createElement('label')
+    itemManuLocLabel.innerText = "Made In:"
+    const itemManuLocInput = document.createElement('input')
+    itemManuLocInput.name = "manufacture_location"
+
+    const itemCostLabel = document.createElement('label')
+    itemCostLabel.innerText = "Cost:"
+    const itemCostInput = document.createElement('input')
+    itemCostInput.type = "number"
+    itemCostInput.name = "cost"
+
+    const itemTimesUsedLabel = document.createElement('label')
+    itemTimesUsedLabel.innerText = "Times Used:"
+    const itemTimesUsedInput = document.createElement('input')
+    itemTimesUsedInput.type = "number"
+    itemTimesUsedInput.name = "times_used"
+
     const categorySelector = document.createElement('select')
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
@@ -96,7 +133,15 @@ class Item {
     const submitBtn = document.createElement('button')
     submitBtn.innerText = "Submit"
 
-    itemForm.append(itemNameLabel, itemNameInput, categorySelector, submitBtn)
+    itemForm.append(itemNameLabel, itemNameInput, 
+      itemImageLabel, itemImageInput, 
+      itemColorLabel, itemColorInput, 
+      itemDatePurchasedLabel, itemDatePurchasedInput, 
+      itemStoreLabel, itemStoreInput, 
+      itemManuLocLabel, itemManuLocInput, 
+      itemCostLabel, itemCostInput, 
+      itemTimesUsedLabel, itemTimesUsedInput, 
+      categorySelector, submitBtn)
   }
 
   static categoryDropdown(categorySelector) {
