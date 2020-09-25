@@ -15,7 +15,7 @@ body {
   border: grey solid 1px;
   border-radius: 5px; 
   padding: 1rem;
-  width: auto;
+  width: 30rem;
   height: auto;
   display: inline-block;
   margin: 1rem 2rem;
@@ -23,8 +23,8 @@ body {
 }
 
 .card-img{
-  height: 15rem;
-  width: auto;
+  height: auto;
+  width: 10rem;
   float: left;
   /* border: 1px solid whitesmoke; */
   /* border-radius: 5px; */
@@ -55,7 +55,7 @@ body {
 .modal-content {
   background-color: black;
   margin: auto;
-  padding: 20px;
+  padding: auto;
   border: 1px solid #888;
   width: 80%;
   display: block;
