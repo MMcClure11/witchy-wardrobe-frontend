@@ -5,6 +5,11 @@ body {
     color: white; 
 }
 
+.btn {
+  background-color: #31708E;
+  color: #F7F9FB;
+}
+
 .item-card {
   text-align: center;
   border: grey solid 1px;

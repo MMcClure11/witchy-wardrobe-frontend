@@ -7,7 +7,8 @@ class Item {
   static addItemBtn() {
     const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
-    addBtn.className = "add-button"
+    addBtn.className = 'btn'
+    // addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
     btnDiv.appendChild(addBtn)
     app.appendChild(btnDiv)
@@ -54,7 +55,7 @@ class Item {
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
     const deleteBtn = document.createElement('button')
-    deleteBtn.className = 'delete item-button'
+    deleteBtn.className = 'btn'
     deleteBtn.innerText = `Remove ${name}`
     this.itemDeleteHandler(deleteBtn, card)
 
