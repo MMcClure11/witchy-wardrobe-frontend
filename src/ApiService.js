@@ -21,4 +21,11 @@ class ApiService {
     })
       .then(res => res.json())
   }
+
+  static deleteItem(itemId){
+    return fetch(`${ITEMS_URL}/${itemId}`, {
+      method: "DELETE"
+    })
+    .then(res => res.json())
+  }
 }
