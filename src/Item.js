@@ -21,9 +21,9 @@ class Item {
     app.appendChild(card)
   }
 
-  cardContent(card, div) {
+  cardContent(card) {
     const {name, image, color, date_purchased, store, manufacture_location, cost, times_used} = this.item
-    
+   
     const itemCategory = document.createElement('h2')
     itemCategory.className = 'h2'
     itemCategory.innerText = this.item.category.name
@@ -57,10 +57,15 @@ class Item {
     const deleteBtn = document.createElement('button')
     deleteBtn.className = 'delete item-button'
     deleteBtn.innerText = `Remove ${name}`
-    deleteBtn.addEventListener("click", () => {
-      ApiService.deleteItem(this.item.id).then(() => div.remove())
-    })
+    this.itemDeleteHandler(deleteBtn, card)
+    
     card.append(itemCategory, itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
+  }
+
+  itemDeleteHandler(deleteBtn, card) {
+    deleteBtn.addEventListener("click", () => {
+      ApiService.deleteItem(this.item.id).then(() => card.remove())
+    })
   }
 
   static itemModalHandler(addBtn){
