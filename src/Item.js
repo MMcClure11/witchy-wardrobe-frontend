@@ -53,13 +53,19 @@ class Item {
     const itemTimesUsed = document.createElement('p')
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
+    const editBtn = document.createElement('p')
+    editBtn.className = 'btn'
+    editBtn.id = 'edit-btn'
+    editBtn.innerText = `Edit ${name}`
+    this.itemEditHandler(editBtn, card)
+
     const deleteBtn = document.createElement('p')
     deleteBtn.className = 'btn'
     deleteBtn.id = 'delete-btn'
     deleteBtn.innerText = "x"
     this.itemDeleteHandler(deleteBtn, card)
 
-    infoDiv.append(itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed)
+    infoDiv.append(itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, editBtn)
     itemCategory.appendChild(deleteBtn)
     card.append(itemCategory, infoDiv, itemImg)
   }
@@ -67,6 +73,12 @@ class Item {
   itemDeleteHandler(deleteBtn, card) {
     deleteBtn.addEventListener("click", () => {
       ApiService.deleteItem(this.item.id).then(() => card.remove())
+    })
+  }
+
+  itemEditHandler(editBtn, card){
+    editBtn.addEventListener("click", () => {
+      alert("edit")
     })
   }
 
