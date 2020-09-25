@@ -5,10 +5,12 @@ class Item {
   }
 
   static addItemBtn() {
+    const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
     addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
-    app.appendChild(addBtn)
+    btnDiv.appendChild(addBtn)
+    app.appendChild(btnDiv)
 
     Item.itemModalHandler(addBtn)
   }
@@ -36,9 +38,6 @@ class Item {
     itemImg.className = 'item-image'
     itemImg.src = image
    
-    const itemColor = document.createElement('p')
-    itemColor.innerText = color
-   
     const itemDatePurchased = document.createElement('p')
     itemDatePurchased.innerText = `Purchased on ${date_purchased}`
   
@@ -59,7 +58,7 @@ class Item {
     deleteBtn.innerText = `Remove ${name}`
     this.itemDeleteHandler(deleteBtn, card)
 
-    card.append(itemCategory, itemName, itemImg, itemColor, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
+    card.append(itemCategory, itemName, itemImg, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
   }
 
   itemDeleteHandler(deleteBtn, card) {
