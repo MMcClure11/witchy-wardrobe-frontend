@@ -30,16 +30,14 @@ class Item {
     const itemCategory = document.createElement('h3')
     itemCategory.className = 'h3 card-header'
     itemCategory.innerText = `${this.item.category.name} - ${name}`
-  
-    // const itemName = document.createElement('h3')
-    // itemName.className = 'h3 card-header'
-    // itemName.innerText = name
-    // itemCategory.appendChild(itemName)
     
     const itemImg = document.createElement('img')
-    itemImg.className = 'card-body'
+    itemImg.className = 'card-img float-right'
     itemImg.src = image
    
+    const infoDiv = document.createElement('div')
+    infoDiv.id = 'info-div'
+    
     const itemDatePurchased = document.createElement('p')
     itemDatePurchased.innerText = `Purchased on ${date_purchased}`
   
@@ -55,12 +53,14 @@ class Item {
     const itemTimesUsed = document.createElement('p')
     itemTimesUsed.innerText = `Worn ${times_used} times.`
 
-    const deleteBtn = document.createElement('button')
-    deleteBtn.className = 'btn'
+    const deleteBtn = document.createElement('p')
+    deleteBtn.className = 'card-footer btn'
     deleteBtn.innerText = `Remove ${name}`
     this.itemDeleteHandler(deleteBtn, card)
 
-    card.append(itemCategory, itemImg, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
+    infoDiv.append(itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
+
+    card.append(itemCategory, infoDiv, itemImg)
   }
 
   itemDeleteHandler(deleteBtn, card) {

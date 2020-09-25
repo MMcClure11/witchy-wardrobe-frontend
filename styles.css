@@ -11,22 +11,27 @@ body {
 }
 
 .card {
-  text-align: center;
+  /* text-align: center; */
   border: grey solid 1px;
   border-radius: 5px; 
   padding: 1rem;
   width: auto;
   height: auto;
-  display: inline-grid;
+  display: inline-block;
   margin: 1rem 2rem;
   background-color: rgb(134, 148, 134);
 }
 
-.card-body {
+.card-img{
   height: 15rem;
   width: auto;
+  float: left;
   /* border: 1px solid whitesmoke; */
   /* border-radius: 5px; */
+}
+
+#info-div {
+  float: right;
 }
 
 /*///////////////////////////*/
