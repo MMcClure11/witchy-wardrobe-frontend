@@ -10,7 +10,7 @@ body {
   color: #F7F9FB;
 }
 
-.item-card {
+.card {
   text-align: center;
   border: grey solid 1px;
   border-radius: 5px; 
@@ -22,11 +22,11 @@ body {
   background-color: rgb(134, 148, 134);
 }
 
-.item-image {
+.card-body {
   height: 15rem;
   width: auto;
-  border: 1px solid whitesmoke;
-  border-radius: 5px;
+  /* border: 1px solid whitesmoke; */
+  /* border-radius: 5px; */
 }
 
 /*///////////////////////////*/

@@ -18,7 +18,7 @@ class Item {
 
   createCard(){
     const card = document.createElement('div')
-    card.className = "item-card"
+    card.className = "card text-center"
     card.dataset.id = this.item.id
     this.cardContent(card)
     app.appendChild(card)
@@ -27,16 +27,17 @@ class Item {
   cardContent(card) {
     const {name, image, color, date_purchased, store, manufacture_location, cost, times_used} = this.item
    
-    const itemCategory = document.createElement('h2')
-    itemCategory.className = 'h2'
-    itemCategory.innerText = this.item.category.name
+    const itemCategory = document.createElement('h3')
+    itemCategory.className = 'h3 card-header'
+    itemCategory.innerText = `${this.item.category.name} - ${name}`
   
-    const itemName = document.createElement('h3')
-    itemName.className = 'h3'
-    itemName.innerText = name
+    // const itemName = document.createElement('h3')
+    // itemName.className = 'h3 card-header'
+    // itemName.innerText = name
+    // itemCategory.appendChild(itemName)
     
     const itemImg = document.createElement('img')
-    itemImg.className = 'item-image'
+    itemImg.className = 'card-body'
     itemImg.src = image
    
     const itemDatePurchased = document.createElement('p')
@@ -59,7 +60,7 @@ class Item {
     deleteBtn.innerText = `Remove ${name}`
     this.itemDeleteHandler(deleteBtn, card)
 
-    card.append(itemCategory, itemName, itemImg, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
+    card.append(itemCategory, itemImg, itemDatePurchased, itemStore, itemManuLoc, itemCost, itemTimesUsed, deleteBtn)
   }
 
   itemDeleteHandler(deleteBtn, card) {
