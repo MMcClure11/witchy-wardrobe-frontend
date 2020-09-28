@@ -62,7 +62,20 @@ class Item {
     this.itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used)
     editItemForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      console.log(e.target)
+      // console.log(this.item.id)
+      const editedItem = {
+        name: e.target.name.value,
+        image: e.target.image.value,
+        color: e.target.color.value,
+        date_purchased: e.target.date_purchased.value,
+        store: e.target.store.value,
+        manufacture_location: e.target.manufacture_location.value,
+        cost: e.target.cost.value,
+        times_used: e.target.times_used.value,
+        category_name: e.target.category.value
+      }
+      // console.log(editedItem)
+      this.updateItemHandler(editedItem, card)
     })
 
     const deleteBtn = document.createElement('p')
@@ -199,6 +212,11 @@ class Item {
       itemCostDiv, 
       itemTimesUsedDiv, 
       categorySelectorLabel, categorySelector, submitBtn)
+  }
+
+  updateItemHandler(editedItem, card){
+    ApiService.updateItem(this.item.id, editedItem)
+    .then(console.log)
   }
 
   static itemModalHandler(addBtn){
