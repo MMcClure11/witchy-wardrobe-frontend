@@ -28,4 +28,15 @@ class ApiService {
     })
     .then(res => res.json())
   }
+
+  static updateItem(itemId, item){
+    return fetch(`${ITEMS_URL}/${itemId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(item)
+    })
+    .then(res => res.json())
+  }
 }
