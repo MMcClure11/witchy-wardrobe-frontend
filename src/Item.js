@@ -97,25 +97,41 @@ class Item {
   }
 
   static itemFormContent(itemForm){
+    const itemNameDiv = document.createElement('div')
+    itemNameDiv.className = 'form-group'
     const itemNameLabel = document.createElement('label')
     itemNameLabel.innerText = "Item Name:"
     const itemNameInput = document.createElement('input')
     itemNameInput.name = "name"
+    itemNameInput.className = "form-control"
+    itemNameDiv.append(itemNameLabel, itemNameInput)
 
+    const itemImageDiv = document.createElement('div')
+    itemImageDiv.className = 'form-group'
     const itemImageLabel = document.createElement('label')
     itemImageLabel.innerText = "Item Image:"
     const itemImageInput = document.createElement('input')
     itemImageInput.name = "image"
+    itemImageInput.className = "form-control"
+    itemImageDiv.append(itemImageLabel, itemImageInput)
 
+    const itemColorDiv = document.createElement('div')
+    itemColorDiv.className = 'form-group'
     const itemColorLabel = document.createElement('label')
     itemColorLabel.innerText = "Item Color:"
     const itemColorInput = document.createElement('input')
     itemColorInput.name = "color"
+    itemColorInput.className = "form-control"
+    itemColorDiv.append(itemColorLabel, itemColorInput)
 
+    const itemDatePurchasedDiv = document.createElement('div')
+    itemDatePurchasedDiv.className = 'form-group'
     const itemDatePurchasedLabel = document.createElement('label')
     itemDatePurchasedLabel.innerText = "Date Purchased:"
     const itemDatePurchasedInput = document.createElement('input')
     itemDatePurchasedInput.name = "date_purchased"
+    itemDatePurchasedInput.className = "form-control"
+    itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
 
     const itemStoreLabel = document.createElement('label')
     itemStoreLabel.innerText = "Store Purchased From:"
@@ -147,10 +163,10 @@ class Item {
     const submitBtn = document.createElement('button')
     submitBtn.innerText = "Submit"
 
-    itemForm.append(itemNameLabel, itemNameInput, 
-      itemImageLabel, itemImageInput, 
-      itemColorLabel, itemColorInput, 
-      itemDatePurchasedLabel, itemDatePurchasedInput, 
+    itemForm.append(itemNameDiv, 
+      itemImageDiv, 
+      itemColorDiv, 
+      itemDatePurchasedDiv, 
       itemStoreLabel, itemStoreInput, 
       itemManuLocLabel, itemManuLocInput, 
       itemCostLabel, itemCostInput, 
