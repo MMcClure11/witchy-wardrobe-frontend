@@ -97,7 +97,7 @@ class Item {
 
   itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used){
     editBtn.addEventListener("click", () => {
-      console.log(this.item)
+      // console.log(this.item)
       modal.style.display = "block"
       editItemForm.id = 'edit-item-form'
       modalContent.append(editItemForm)
@@ -216,7 +216,13 @@ class Item {
 
   updateItemHandler(editedItem, card){
     ApiService.updateItem(this.item.id, editedItem)
-    .then(console.log)
+    .then(updatedItem => {
+      this.item = updatedItem
+      card.innerHTML = ""
+      this.cardContent(card)
+      modal.style.display = "none"
+      modal.querySelector("form").remove()
+    })
   }
 
   static itemModalHandler(addBtn){
