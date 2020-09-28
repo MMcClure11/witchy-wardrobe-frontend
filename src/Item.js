@@ -22,6 +22,7 @@ class Item {
     card.dataset.id = this.item.id
     this.cardContent(card)
     app.appendChild(card)
+    return card
   }
 
   cardContent(card) {
@@ -161,18 +162,28 @@ class Item {
     itemCostInput.className = "form-control"
     itemCostDiv.append(itemCostLabel, itemCostInput)
 
+    const itemTimesUsedDiv = document.createElement('div')
+    itemTimesUsedDiv.className = 'form-group'
     const itemTimesUsedLabel = document.createElement('label')
     itemTimesUsedLabel.innerText = "Times Used:"
     const itemTimesUsedInput = document.createElement('input')
     itemTimesUsedInput.type = "number"
     itemTimesUsedInput.name = "times_used"
+    itemTimesUsedInput.className = "form-control"
+    itemTimesUsedDiv.append(itemTimesUsedLabel, itemTimesUsedInput)
 
+    const itemCatDiv = document.createElement('div')
+    itemCatDiv.className = 'form-group'
+    const categorySelectorLabel = document.createElement('label')
+    categorySelectorLabel.innerText = "Category:"
     const categorySelector = document.createElement('select')
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
+    categorySelector.className = 'form-control'
     Item.categoryDropdown(categorySelector)
 
     const submitBtn = document.createElement('button')
+    submitBtn.className = 'btn'
     submitBtn.innerText = "Submit"
 
     itemForm.append(itemNameDiv, 
@@ -182,8 +193,8 @@ class Item {
       itemStoreDiv,
       itemManuLocDiv,
       itemCostDiv, 
-      itemTimesUsedLabel, itemTimesUsedInput, 
-      categorySelector, submitBtn)
+      itemTimesUsedDiv, 
+      categorySelectorLabel, categorySelector, submitBtn)
   }
 
   static categoryDropdown(categorySelector) {
