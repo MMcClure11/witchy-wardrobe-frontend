@@ -109,7 +109,7 @@ class Item {
     const itemImageDiv = document.createElement('div')
     itemImageDiv.className = 'form-group'
     const itemImageLabel = document.createElement('label')
-    itemImageLabel.innerText = "Item Image:"
+    itemImageLabel.innerText = "Item Image URL:"
     const itemImageInput = document.createElement('input')
     itemImageInput.name = "image"
     itemImageInput.className = "form-control"
@@ -133,21 +133,33 @@ class Item {
     itemDatePurchasedInput.className = "form-control"
     itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
 
+    const itemStoreDiv = document.createElement('div')
+    itemStoreDiv.className = 'form-group'
     const itemStoreLabel = document.createElement('label')
     itemStoreLabel.innerText = "Store Purchased From:"
     const itemStoreInput = document.createElement('input')
     itemStoreInput.name = "store"
+    itemStoreInput.className = "form-control"
+    itemStoreDiv.append(itemStoreLabel, itemStoreInput)
 
+    const itemManuLocDiv = document.createElement('div')
+    itemManuLocDiv.className = 'form-group'
     const itemManuLocLabel = document.createElement('label')
     itemManuLocLabel.innerText = "Made In:"
     const itemManuLocInput = document.createElement('input')
     itemManuLocInput.name = "manufacture_location"
+    itemManuLocInput.className = "form-control"
+    itemManuLocDiv.append(itemManuLocLabel, itemManuLocInput)
 
+    const itemCostDiv = document.createElement('div')
+    itemCostDiv.className = 'form-group'
     const itemCostLabel = document.createElement('label')
     itemCostLabel.innerText = "Cost:"
     const itemCostInput = document.createElement('input')
     itemCostInput.type = "number"
     itemCostInput.name = "cost"
+    itemCostInput.className = "form-control"
+    itemCostDiv.append(itemCostLabel, itemCostInput)
 
     const itemTimesUsedLabel = document.createElement('label')
     itemTimesUsedLabel.innerText = "Times Used:"
@@ -167,9 +179,9 @@ class Item {
       itemImageDiv, 
       itemColorDiv, 
       itemDatePurchasedDiv, 
-      itemStoreLabel, itemStoreInput, 
-      itemManuLocLabel, itemManuLocInput, 
-      itemCostLabel, itemCostInput, 
+      itemStoreDiv,
+      itemManuLocDiv,
+      itemCostDiv, 
       itemTimesUsedLabel, itemTimesUsedInput, 
       categorySelector, submitBtn)
   }
