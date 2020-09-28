@@ -60,6 +60,10 @@ class Item {
     editBtn.innerText = `Edit ${name}`
     const editItemForm = document.createElement('form')
     this.itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used)
+    editItemForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      console.log(e.target)
+    })
 
     const deleteBtn = document.createElement('p')
     deleteBtn.className = 'btn'
@@ -155,6 +159,7 @@ class Item {
     itemCostLabel.innerText = "Cost:"
     const itemCostInput = document.createElement('input')
     itemCostInput.type = "number"
+    itemCostInput.step = "0.01"
     itemCostInput.name = "cost"
     itemCostInput.value = cost
     itemCostInput.className = "form-control"
@@ -271,6 +276,7 @@ class Item {
     itemCostLabel.innerText = "Cost:"
     const itemCostInput = document.createElement('input')
     itemCostInput.type = "number"
+    itemCostInput.step = "0.01"
     itemCostInput.name = "cost"
     itemCostInput.className = "form-control"
     itemCostDiv.append(itemCostLabel, itemCostInput)
