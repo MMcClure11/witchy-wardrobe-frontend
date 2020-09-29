@@ -43,6 +43,12 @@ class ApiService {
       },
       body: JSON.stringify(item)
     })
-    .then(res => res.json())
+    .then(res => {
+      if (res.ok) {
+        return res.json()
+      } else {
+        throw Error("Bad Request")
+      }
+    })
   }
 }
