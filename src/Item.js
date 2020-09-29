@@ -26,7 +26,7 @@ class Item {
   }
 
   cardContent(card) {
-    const {name, image, color, date_purchased, store, manufacture_location, cost, times_used} = this.item
+    const {name, image, color, format_date, date_purchased, store, manufacture_location, cost, times_used} = this.item
    
     const itemCategory = document.createElement('h4')
     itemCategory.className = 'h4 card-header'
@@ -40,7 +40,7 @@ class Item {
     infoDiv.id = 'info-div'
     
     const itemDatePurchased = document.createElement('p')
-    itemDatePurchased.innerText = `Purchased on ${date_purchased}`
+    itemDatePurchased.innerText = `Purchased on ${format_date}`
   
     const itemStore = document.createElement('p')
     itemStore.innerText = `From ${store}`
