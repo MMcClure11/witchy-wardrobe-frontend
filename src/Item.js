@@ -108,13 +108,13 @@ class Item {
     editBtn.addEventListener("click", () => {
       // console.log(this.item)
       modal.style.display = "block"
-      editItemForm.id = 'edit-item-form'
       modalContent.append(editItemForm)
       this.renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used)
     })
   }
 
   renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used){
+    editItemForm.innerHTML = ""
     const itemNameDiv = document.createElement('div')
     itemNameDiv.className = 'form-group'
     const itemNameLabel = document.createElement('label')
