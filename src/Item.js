@@ -151,6 +151,7 @@ class Item {
     itemDatePurchasedLabel.innerText = "Date Purchased:"
     const itemDatePurchasedInput = document.createElement('input')
     itemDatePurchasedInput.name = "date_purchased"
+    itemDatePurchasedInput.type = "date"
     itemDatePurchasedInput.value = date_purchased
     itemDatePurchasedInput.className = "form-control"
     itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
@@ -282,6 +283,7 @@ class Item {
     itemDatePurchasedLabel.innerText = "Date Purchased:"
     const itemDatePurchasedInput = document.createElement('input')
     itemDatePurchasedInput.name = "date_purchased"
+    itemDatePurchasedInput.type = "date"
     itemDatePurchasedInput.className = "form-control"
     itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
 
