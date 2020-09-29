@@ -19,7 +19,13 @@ class ApiService {
       },
       body: JSON.stringify(newItem)
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        } else {
+          throw Error("Bad Request")
+        }
+      })
   }
 
   static deleteItem(itemId){
