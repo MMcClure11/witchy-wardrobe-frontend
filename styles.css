@@ -31,6 +31,7 @@ body {
 #info-div {
   float: right;
   margin: 1rem;
+  width: 12rem;
 }
 
 #delete-btn {
