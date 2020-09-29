@@ -379,7 +379,7 @@ class Item {
     .then(item => {
       new Item(item)
     })
-    .catch(error => alert(error))
+    .catch(error => alert("Error:", error))
     e.target.reset();
     modal.querySelector("form").remove()
   }
