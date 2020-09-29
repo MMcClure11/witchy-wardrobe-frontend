@@ -54,7 +54,13 @@ class Item {
     const itemTimesUsed = document.createElement('p')
     itemTimesUsed.innerText = `Worn ${times_used} times. +`
     itemTimesUsed.addEventListener("click", () => {
-      alert("clicked")
+      // console.log(this.item.id)
+      ApiService.increaseTimesUsed(this.item.id)
+        .then(updatedItem => {
+          this.item = updatedItem
+          card.innerHTML = ""
+          this.cardContent(card)
+        })
     })
 
     const editBtn = document.createElement('p')
