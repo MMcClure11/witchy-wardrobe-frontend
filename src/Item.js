@@ -52,7 +52,10 @@ class Item {
     itemCost.innerText = `Cost: $${cost}`
   
     const itemTimesUsed = document.createElement('p')
-    itemTimesUsed.innerText = `Worn ${times_used} times.`
+    itemTimesUsed.innerText = `Worn ${times_used} times. +`
+    itemTimesUsed.addEventListener("click", () => {
+      alert("clicked")
+    })
 
     const editBtn = document.createElement('p')
     editBtn.className = 'btn'

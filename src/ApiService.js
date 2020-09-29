@@ -51,4 +51,7 @@ class ApiService {
       }
     })
   }
+
+  static increaseTimesUsed = (id) => fetch(`${ITEMS_URL}/${id}`, {method: "PATCH"}).then(res => res.json())
+
 }
