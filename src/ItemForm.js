@@ -185,6 +185,7 @@ class ItemForm {
     const itemNameInput = document.createElement('input')
     itemNameInput.name = "name"
     itemNameInput.value = name
+    itemNameInput.required = true
     itemNameInput.className = "form-control"
     itemNameDiv.append(itemNameLabel, itemNameInput)
 
@@ -195,6 +196,7 @@ class ItemForm {
     const itemImageInput = document.createElement('input')
     itemImageInput.name = "image"
     itemImageInput.value = image
+    itemImageInput.required = true
     itemImageInput.className = "form-control"
     itemImageDiv.append(itemImageLabel, itemImageInput)
 
@@ -205,6 +207,7 @@ class ItemForm {
     const itemColorInput = document.createElement('input')
     itemColorInput.name = "color"
     itemColorInput.value = color
+    itemColorInput.required = true
     itemColorInput.className = "form-control"
     itemColorDiv.append(itemColorLabel, itemColorInput)
 
@@ -216,6 +219,7 @@ class ItemForm {
     itemDatePurchasedInput.name = "date_purchased"
     itemDatePurchasedInput.type = "date"
     itemDatePurchasedInput.value = date_purchased
+    itemDatePurchasedInput.required = true
     itemDatePurchasedInput.className = "form-control"
     itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
 
@@ -226,6 +230,7 @@ class ItemForm {
     const itemStoreInput = document.createElement('input')
     itemStoreInput.name = "store"
     itemStoreInput.value = store
+    itemStoreInput.required = true
     itemStoreInput.className = "form-control"
     itemStoreDiv.append(itemStoreLabel, itemStoreInput)
 
@@ -236,6 +241,7 @@ class ItemForm {
     const itemManuLocInput = document.createElement('input')
     itemManuLocInput.name = "manufacture_location"
     itemManuLocInput.value = manufacture_location
+    itemManuLocInput.required = true
     itemManuLocInput.className = "form-control"
     itemManuLocDiv.append(itemManuLocLabel, itemManuLocInput)
 
@@ -248,6 +254,7 @@ class ItemForm {
     itemCostInput.step = "0.01"
     itemCostInput.name = "cost"
     itemCostInput.value = cost
+    itemCostInput.required = true
     itemCostInput.className = "form-control"
     itemCostDiv.append(itemCostLabel, itemCostInput)
 
@@ -259,6 +266,7 @@ class ItemForm {
     itemTimesUsedInput.type = "number"
     itemTimesUsedInput.name = "times_used"
     itemTimesUsedInput.value = times_used
+    itemTimesUsedInput.required = true
     itemTimesUsedInput.className = "form-control"
     itemTimesUsedDiv.append(itemTimesUsedLabel, itemTimesUsedInput)
 
