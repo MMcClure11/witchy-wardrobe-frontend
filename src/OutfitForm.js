@@ -36,7 +36,20 @@ class OutfitForm {
     outfitLikesInput.className = "form-control"
     outfitLikesDiv.append(outfitLikesLabel, outfitLikesInput)
 
+    const itemsCheckContainer = document.createElement('div')
+    const itemsCheck = document.createElement('div')
+    const checkboxLabel = document.createElement('label')
+    checkboxLabel.innerText = "Pick your clothes for your Outfit:"
+    itemsCheckContainer.append(checkboxLabel, itemsCheck)
 
-    outfitForm.append(outfitNameDiv, outfitLikesDiv)
+    ApiService.getAllItems()
+      .then(items => {
+        items.forEach(item => {
+          itemsCheck.innerHTML += `<input class="checks" type="checkbox" id="${item.id}" name="${item.name}">
+          <label>${item.name}</label>`
+        })
+      })
+
+    outfitForm.append(outfitNameDiv, outfitLikesDiv, itemsCheckContainer)
   }
 }
