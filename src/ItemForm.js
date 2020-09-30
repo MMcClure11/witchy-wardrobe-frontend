@@ -9,6 +9,7 @@ class ItemForm {
   static createItemForm(){
     modal.style.display = "block"
     const itemForm = document.createElement('form')
+    modalContent.innerHTML = ""
     modalContent.append(itemForm)
     ItemForm.itemFormContent(itemForm)
     itemForm.addEventListener('submit', ItemForm.handleFormSubmit)

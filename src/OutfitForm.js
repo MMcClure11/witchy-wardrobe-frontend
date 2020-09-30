@@ -9,6 +9,7 @@ class OutfitForm {
   static createOutfitForm(){
     modal.style.display = "block"
     const outfitForm = document.createElement('form')
+    modalContent.innerHTML = ""
     modalContent.append(outfitForm)
     OutfitForm.outfitFormContent(outfitForm)
     outfitForm.addEventListener('submit', OutfitForm.handleFormSubmit)
