@@ -20,7 +20,22 @@ class Outfit {
     const outfitName = document.createElement('h3')
     outfitName.innerText = name
 
-    card.append(outfitName)
+    const outfitLikes = document.createElement('h5')
+    outfitLikes.innerText = `Loved ${likes} times.`
+
+    const ul = document.createElement('ul')
+    ul.innerText = "Items:"
+
+    this.outfit.items.forEach(item => {
+      let li = document.createElement('li')
+      li.innerText = `${item.name}`
+      let itemImg = document.createElement('img')
+      itemImg.src = item.image
+      li.appendChild(itemImg)
+      ul.appendChild(li)
+    });
+
+    card.append(outfitName, outfitLikes, ul)
   }
 
 }
