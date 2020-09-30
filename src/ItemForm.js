@@ -21,6 +21,7 @@ class ItemForm {
     itemNameLabel.innerText = "Item Name:"
     const itemNameInput = document.createElement('input')
     itemNameInput.name = "name"
+    itemNameInput.required = true
     itemNameInput.className = "form-control"
     itemNameDiv.append(itemNameLabel, itemNameInput)
 
@@ -30,6 +31,7 @@ class ItemForm {
     itemImageLabel.innerText = "Item Image URL:"
     const itemImageInput = document.createElement('input')
     itemImageInput.name = "image"
+    itemImageInput.required = true
     itemImageInput.className = "form-control"
     itemImageDiv.append(itemImageLabel, itemImageInput)
 
@@ -39,6 +41,7 @@ class ItemForm {
     itemColorLabel.innerText = "Item Color:"
     const itemColorInput = document.createElement('input')
     itemColorInput.name = "color"
+    itemColorInput.required = true
     itemColorInput.className = "form-control"
     itemColorDiv.append(itemColorLabel, itemColorInput)
 
@@ -48,6 +51,7 @@ class ItemForm {
     itemDatePurchasedLabel.innerText = "Date Purchased:"
     const itemDatePurchasedInput = document.createElement('input')
     itemDatePurchasedInput.name = "date_purchased"
+    itemDatePurchasedInput.required = true
     itemDatePurchasedInput.type = "date"
     itemDatePurchasedInput.className = "form-control"
     itemDatePurchasedDiv.append(itemDatePurchasedLabel, itemDatePurchasedInput)
@@ -58,6 +62,7 @@ class ItemForm {
     itemStoreLabel.innerText = "Store Purchased From:"
     const itemStoreInput = document.createElement('input')
     itemStoreInput.name = "store"
+    itemStoreInput.required = true
     itemStoreInput.className = "form-control"
     itemStoreDiv.append(itemStoreLabel, itemStoreInput)
 
@@ -67,6 +72,7 @@ class ItemForm {
     itemManuLocLabel.innerText = "Made In:"
     const itemManuLocInput = document.createElement('input')
     itemManuLocInput.name = "manufacture_location"
+    itemManuLocInput.required = true
     itemManuLocInput.className = "form-control"
     itemManuLocDiv.append(itemManuLocLabel, itemManuLocInput)
 
@@ -78,6 +84,7 @@ class ItemForm {
     itemCostInput.type = "number"
     itemCostInput.step = "0.01"
     itemCostInput.name = "cost"
+    itemCostInput.required = true
     itemCostInput.className = "form-control"
     itemCostDiv.append(itemCostLabel, itemCostInput)
 
@@ -88,6 +95,7 @@ class ItemForm {
     const itemTimesUsedInput = document.createElement('input')
     itemTimesUsedInput.type = "number"
     itemTimesUsedInput.name = "times_used"
+    itemTimesUsedInput.required = true
     itemTimesUsedInput.className = "form-control"
     itemTimesUsedDiv.append(itemTimesUsedLabel, itemTimesUsedInput)
 
