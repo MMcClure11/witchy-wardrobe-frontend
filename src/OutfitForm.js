@@ -69,6 +69,16 @@ class OutfitForm {
       item_ids: itemIdsArray
     }
     ApiService.postOutfit(newOutfit)
-    .then(console.log)
+    .then(outfit => {
+      if(outfit.errors){
+        alert(outfit.errors)
+      } else {
+      new Outfit(outfit)
+      e.target.reset();
+      modal.querySelector("form").remove()
+      modal.style.display = "none"
+      }
+    })
+    .catch(error => alert(error))
   }
 }
