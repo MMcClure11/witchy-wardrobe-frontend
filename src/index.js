@@ -50,7 +50,7 @@ function initOutfits(){
   ApiService.getAllOutfits()
   .then(outfits => {
     outfits.forEach( outfit => {
-      console.log(outfit)
+      new Outfit(outfit)
     })
   })
   .catch(error => alert(error))

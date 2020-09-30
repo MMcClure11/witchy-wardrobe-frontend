@@ -6,7 +6,10 @@ class Outfit {
   }
 
   createCard(){
-    
+    const card = document.createElement('div')
+    card.className = "card"
+    card.dataset.id = this.outfit.id
+    console.log(this.outfit)
   }
 
 }
