@@ -126,6 +126,7 @@ class ItemForm {
           categorySelector.appendChild(option)
         })
       })
+      .catch(error => alert(error))
   }
 
   static handleFormSubmit(e){
@@ -146,7 +147,7 @@ class ItemForm {
     .then(item => {
       new Item(item)
     })
-    .catch(error => alert("Error:", error))
+    .catch(error => alert(error))
     e.target.reset();
     modal.querySelector("form").remove()
   }

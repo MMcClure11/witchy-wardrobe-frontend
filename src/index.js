@@ -35,11 +35,13 @@ function displayOutfits(){
 }
 
 function initItems(){
-  ApiService.getAllItems().then(items => {
+  ApiService.getAllItems()
+  .then(items => {
     items.forEach( item => {
       new Item(item)
     })
   })
+  .catch(error => alert(error))
 }
 
 // Get the <span> element that closes the modal

@@ -61,6 +61,7 @@ class Item {
           card.innerHTML = ""
           this.cardContent(card)
         })
+        .catch(error => alert(error))
     })
 
     const editBtn = document.createElement('p')
@@ -100,7 +101,9 @@ class Item {
 
   itemDeleteHandler(deleteBtn, card) {
     deleteBtn.addEventListener("click", () => {
-      ApiService.deleteItem(this.item.id).then(() => card.remove())
+      ApiService.deleteItem(this.item.id)
+        .then(() => card.remove())
+        .catch(error => alert(error))
     })
   }
 
@@ -113,6 +116,7 @@ class Item {
       modal.style.display = "none"
       modal.querySelector("form").remove()
     })
+    .catch(error => alert(error))
   }
 
 }

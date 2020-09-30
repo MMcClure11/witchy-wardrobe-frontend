@@ -19,13 +19,7 @@ class ApiService {
       },
       body: JSON.stringify(newItem)
     })
-      .then(res => {
-        if (res.ok) {
-          return res.json()
-        } else {
-          throw Error("Bad Request")
-        }
-      })
+      .then(res => res.json())
   }
 
   static deleteItem(itemId){
@@ -43,13 +37,7 @@ class ApiService {
       },
       body: JSON.stringify(item)
     })
-    .then(res => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        throw Error("Bad Request")
-      }
-    })
+    .then(res => res.json())
   }
 
   static increaseTimesUsed = (id) => fetch(`${ITEMS_URL}/${id}`, {method: "PATCH"}).then(res => res.json())
