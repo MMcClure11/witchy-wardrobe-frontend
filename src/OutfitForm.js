@@ -11,7 +11,7 @@ class OutfitForm {
     const outfitForm = document.createElement('form')
     modalContent.append(outfitForm)
     OutfitForm.outfitFormContent(outfitForm)
-    outfitForm.addEventListener('submit', outfitForm.handleFormSubmit)
+    outfitForm.addEventListener('submit', OutfitForm.handleFormSubmit)
   }
 
   static outfitFormContent(outfitForm){
@@ -30,7 +30,7 @@ class OutfitForm {
     const outfitLikesLabel = document.createElement('label')
     outfitLikesLabel.innerText = "Love for this Outfit:"
     const outfitLikesInput = document.createElement('input')
-    outfitLikesInput.name = "name"
+    outfitLikesInput.name = "likes"
     outfitLikesInput.required = true
     outfitLikesInput.type = "number" 
     outfitLikesInput.className = "form-control"
@@ -56,5 +56,18 @@ class OutfitForm {
     submitBtn.innerText = "Submit"
 
     outfitForm.append(outfitNameDiv, outfitLikesDiv, itemsCheckContainer, submitBtn)
+  }
+
+  static handleFormSubmit(e) {
+    e.preventDefault()
+    const checks = Array.from(e.target.querySelectorAll(".checks"))
+    const checkedItems = checks.filter( item => item.checked )
+    let itemIdsArray = checkedItems.map( item => parseInt(item.id))
+    const newOutfit = {
+      name: e.target.name.value,
+      likes: e.target.likes.value,
+      item_ids: itemIdsArray
+    }
+    console.log(newOutfit)
   }
 }
