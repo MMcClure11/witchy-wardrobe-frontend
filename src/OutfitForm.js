@@ -51,6 +51,10 @@ class OutfitForm {
         })
       })
 
-    outfitForm.append(outfitNameDiv, outfitLikesDiv, itemsCheckContainer)
+    const submitBtn = document.createElement('button')
+    submitBtn.className = 'btn'
+    submitBtn.innerText = "Submit"
+
+    outfitForm.append(outfitNameDiv, outfitLikesDiv, itemsCheckContainer, submitBtn)
   }
 }
