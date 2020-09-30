@@ -12,6 +12,7 @@ class Outfit {
     addBtn.innerText = "Create a New Outfit"
     btnDiv.appendChild(addBtn)
     app.appendChild(btnDiv)
+    OutfitForm.outfitModalHandler(addBtn)
   }
 
   createCard(){
