@@ -7,7 +7,7 @@ class Outfit {
 
   createCard(){
     const card = document.createElement('div')
-    card.className = "card text-center"
+    card.className = "card text-center "
     card.dataset.id = this.outfit.id
     card.id = 'outfit-card'
     this.cardContent(card)
