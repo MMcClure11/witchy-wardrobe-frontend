@@ -37,6 +37,7 @@ class OutfitForm {
     outfitLikesDiv.append(outfitLikesLabel, outfitLikesInput)
 
     const itemsCheckContainer = document.createElement('div')
+    itemsCheckContainer.className = "items-check-container"
     const itemsCheck = document.createElement('div')
     const checkboxLabel = document.createElement('label')
     checkboxLabel.innerText = "Pick your clothes for your Outfit:"

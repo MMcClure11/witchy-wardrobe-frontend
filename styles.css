@@ -62,6 +62,22 @@ body {
   margin-bottom: .5rem;
 }
 
+/* .items-check-container {
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 18rem;
+} */
+
+.checks {
+   /* margin-right: .5rem;
+   margin-left: .5rem; */
+  display: flex; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 18rem;
+}
+
 /*///////////////////////////*/
 
 /* The Modal (background) */
