@@ -10,14 +10,14 @@ class ApiService {
     .then(res => res.json())
   }
 
-  static postItem(newItem){
+  static postItem(newOutfit){
     return fetch(ITEMS_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Accept": "application/json"
       },
-      body: JSON.stringify(newItem)
+      body: JSON.stringify(newOutfit)
     })
       .then(res => res.json())
   }
@@ -45,5 +45,17 @@ class ApiService {
   static getAllOutfits(){
     return fetch(OUTFITS_URL)
     .then(res => res.json())
+  }
+
+  static postOutfit(newOutfit){
+    return fetch(OUTFITS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(newOutfit)
+    })
+      .then(res => res.json())
   }
 }
