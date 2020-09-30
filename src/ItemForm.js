@@ -131,7 +131,7 @@ class ItemForm {
 
   static handleFormSubmit(e){
     e.preventDefault()
-    modal.style.display = "none"
+    // modal.style.display = "none"
     const newItem = {
       name: e.target.name.value,
       image: e.target.image.value,
@@ -145,11 +145,18 @@ class ItemForm {
     }
     ApiService.postItem(newItem)
     .then(item => {
+      if(item.errors){
+        alert(item.errors)
+      } else {
       new Item(item)
+      e.target.reset();
+      modal.querySelector("form").remove()
+      modal.style.display = "none"
+      }
     })
     .catch(error => alert(error))
-    e.target.reset();
-    modal.querySelector("form").remove()
+    // e.target.reset();
+    // modal.querySelector("form").remove()
   }
 
   static itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used){
