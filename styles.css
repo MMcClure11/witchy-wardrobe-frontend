@@ -15,14 +15,14 @@ body {
   border-radius: 5px; 
   padding: 1rem;
   width: 32rem;
-  height: 23rem;
+  height: auto;
   display: inline-block;
   margin: 1rem 2rem;
   background-color: rgb(134, 148, 134);
 }
 
 .card-img{
-  height: 15rem;
+  height: auto;
   width: 10rem;
   float: left;
   margin: 1rem;
