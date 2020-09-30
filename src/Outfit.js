@@ -23,25 +23,30 @@ class Outfit {
     outfitName.innerText = name
 
     const outfitLikes = document.createElement('h5')
+    outfitLikes.className = 'h5 pt-2'
     outfitLikes.innerText = `Loved ${likes} times.`
 
-    const ul = document.createElement('ul')
-    ul.innerText = "Items:"
-    ul.className = 'list-unstyled'
+    const outfitContainer = document.createElement('div')
+    outfitContainer.innerText = "Items:"
+
+    const imagesDiv = document.createElement('div')
+    imagesDiv.className = 'images-div'
+    outfitContainer.appendChild(imagesDiv)
 
     this.outfit.items.forEach(item => {
-      let li = document.createElement('li')
-      li.innerText = `${item.name}`
+      // let li = document.createElement('li')
+      // li.innerText = `${item.name}`
       const itemImgDiv = document.createElement('div')
+      itemImgDiv.className = 'item-outfit-div'
       let itemImgOutfit = document.createElement('img')
       itemImgOutfit.src = item.image
       itemImgOutfit.className = "item-outfit-image"
       itemImgDiv.appendChild(itemImgOutfit)
       // li.appendChild(itemImgOutfit)
-      ul.append(itemImgDiv)
+      imagesDiv.append(itemImgDiv)
     });
 
-    card.append(outfitName, outfitLikes, ul)
+    card.append(outfitName, outfitLikes, outfitContainer)
   }
 
 }
