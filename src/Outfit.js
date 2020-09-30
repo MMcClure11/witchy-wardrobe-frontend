@@ -7,8 +7,9 @@ class Outfit {
 
   createCard(){
     const card = document.createElement('div')
-    card.className = "card"
+    card.className = "card text-center"
     card.dataset.id = this.outfit.id
+    card.id = 'outfit-card'
     this.cardContent(card)
     app.appendChild(card)
     return card
@@ -26,15 +27,18 @@ class Outfit {
 
     const ul = document.createElement('ul')
     ul.innerText = "Items:"
+    ul.className = 'list-unstyled'
 
     this.outfit.items.forEach(item => {
       let li = document.createElement('li')
       li.innerText = `${item.name}`
+      const itemImgDiv = document.createElement('div')
       let itemImgOutfit = document.createElement('img')
       itemImgOutfit.src = item.image
       itemImgOutfit.className = "item-outfit-image"
-      li.appendChild(itemImgOutfit)
-      ul.appendChild(li)
+      itemImgDiv.appendChild(itemImgOutfit)
+      // li.appendChild(itemImgOutfit)
+      ul.append(itemImgDiv)
     });
 
     card.append(outfitName, outfitLikes, ul)

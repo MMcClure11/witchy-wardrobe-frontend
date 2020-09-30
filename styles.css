@@ -39,9 +39,21 @@ body {
   margin-bottom: .5rem;
 }
 
+#outfit-card {
+  position: relative; 
+  width: auto; 
+  height: auto; 
+  background-color: rgb(134, 148, 134);
+  margin-bottom: 3rem; 
+  display: block;
+  margin: 0 auto; 
+  float: none; 
+}
+
 .item-outfit-image {
   width: 5rem;
   height: auto;
+  margin-bottom: .5rem;
 }
 
 /*///////////////////////////*/
