@@ -124,13 +124,16 @@ class ItemForm {
       categorySelectorLabel, categorySelector, submitBtn)
   }
 
-  static categoryDropdown(categorySelector) {
-    ApiService.getAllCategories()
+  static categoryDropdown(categorySelector, selectedCategory) {
+    ApiService.getAllCategories(selectedCategory)
       .then(categories => {
         categories.forEach(category => {
           let option = document.createElement('option')
           option.textContent = category.name
           option.value = category.name
+          if(selectedCategory && selectedCategory === category.name){
+            option.selected = true
+          }
           categorySelector.appendChild(option)
         })
       })
@@ -167,16 +170,16 @@ class ItemForm {
     // modal.querySelector("form").remove()
   }
 
-  static itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used){
+  static itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, category){
     editBtn.addEventListener("click", () => {
       // console.log(this.item)
       modal.style.display = "block"
       modalContent.append(editItemForm)
-      ItemForm.renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used)
+      ItemForm.renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, category)
     })
   }
 
-  static renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used){
+  static renderEditFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, category){
     editItemForm.innerHTML = ""
     const itemNameDiv = document.createElement('div')
     itemNameDiv.className = 'form-group'
@@ -278,7 +281,7 @@ class ItemForm {
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
     categorySelector.className = 'form-control'
-    ItemForm.categoryDropdown(categorySelector)
+    ItemForm.categoryDropdown(categorySelector, category)
 
     const submitBtn = document.createElement('button')
     submitBtn.className = 'btn'

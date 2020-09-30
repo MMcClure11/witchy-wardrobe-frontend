@@ -69,7 +69,7 @@ class Item {
     editBtn.id = 'edit-btn'
     editBtn.innerText = `Edit`
     const editItemForm = document.createElement('form')
-    ItemForm.itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used)
+    ItemForm.itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, this.item.category.name)
     editItemForm.addEventListener("submit", (e) => {
       e.preventDefault();
       // console.log(this.item.id)
