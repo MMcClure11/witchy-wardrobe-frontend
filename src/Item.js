@@ -110,11 +110,15 @@ class Item {
   updateItemHandler(editedItem, card){
     ApiService.updateItem(this.item.id, editedItem)
     .then(updatedItem => {
-      this.item = updatedItem
-      card.innerHTML = ""
-      this.cardContent(card)
-      modal.style.display = "none"
-      modal.querySelector("form").remove()
+      if (updatedItem.errors){
+        alert(updatedItem.errors)
+      } else {
+        this.item = updatedItem
+        card.innerHTML = ""
+        this.cardContent(card)
+        modal.style.display = "none"
+        modal.querySelector("form").remove()
+      }
     })
     .catch(error => alert(error))
   }
