@@ -18,6 +18,7 @@ class Outfit {
     const {name, likes} = this.outfit
 
     const outfitName = document.createElement('h3')
+    outfitName.className = 'h3 card-header'
     outfitName.innerText = name
 
     const outfitLikes = document.createElement('h5')
@@ -29,9 +30,10 @@ class Outfit {
     this.outfit.items.forEach(item => {
       let li = document.createElement('li')
       li.innerText = `${item.name}`
-      let itemImg = document.createElement('img')
-      itemImg.src = item.image
-      li.appendChild(itemImg)
+      let itemImgOutfit = document.createElement('img')
+      itemImgOutfit.src = item.image
+      itemImgOutfit.className = "item-outfit-image"
+      li.appendChild(itemImgOutfit)
       ul.appendChild(li)
     });
 

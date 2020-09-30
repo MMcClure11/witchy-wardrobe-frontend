@@ -39,6 +39,11 @@ body {
   margin-bottom: .5rem;
 }
 
+.item-outfit-image {
+  width: 5rem;
+  height: auto;
+}
+
 /*///////////////////////////*/
 
 /* The Modal (background) */
