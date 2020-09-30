@@ -29,9 +29,6 @@ function displayItems(){
 function displayOutfits(){
   outfitsBtn.addEventListener("click", () => {
     app.innerHTML = "";
-    const h1 = document.createElement('h1')
-    h1.innerText = "Coming Soon."
-    app.appendChild(h1);
     initOutfits();
   })
 }

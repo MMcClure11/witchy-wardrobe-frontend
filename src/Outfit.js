@@ -9,7 +9,18 @@ class Outfit {
     const card = document.createElement('div')
     card.className = "card"
     card.dataset.id = this.outfit.id
-    console.log(this.outfit)
+    this.cardContent(card)
+    app.appendChild(card)
+    return card
+  }
+
+  cardContent(card) {
+    const {name, likes} = this.outfit
+
+    const outfitName = document.createElement('h3')
+    outfitName.innerText = name
+
+    card.append(outfitName)
   }
 
 }
