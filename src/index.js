@@ -1,6 +1,7 @@
 const BASE_URL = 'http://localhost:3000';
 const ITEMS_URL = `${BASE_URL}/items`;
-const CATEGORY_URL = `${BASE_URL}/categories`
+const CATEGORY_URL = `${BASE_URL}/categories`;
+const OUTFITS_URL = `${BASE_URL}/outfits`;
 const body = document.querySelector('body');
 const app = document.createElement('div');
 const itemsBtn = document.querySelector("#items-btn");
@@ -31,6 +32,7 @@ function displayOutfits(){
     const h1 = document.createElement('h1')
     h1.innerText = "Coming Soon."
     app.appendChild(h1);
+    initOutfits();
   })
 }
 
@@ -39,6 +41,16 @@ function initItems(){
   .then(items => {
     items.forEach( item => {
       new Item(item)
+    })
+  })
+  .catch(error => alert(error))
+}
+
+function initOutfits(){
+  ApiService.getAllOutfits()
+  .then(outfits => {
+    outfits.forEach( outfit => {
+      console.log(outfit)
     })
   })
   .catch(error => alert(error))
