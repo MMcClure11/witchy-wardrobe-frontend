@@ -5,6 +5,15 @@ class Outfit {
     this.card = this.createCard()
   }
 
+  static addOutfitBtn() {
+    const btnDiv = document.createElement('div')
+    const addBtn = document.createElement('button')
+    addBtn.className = 'btn'
+    addBtn.innerText = "Create a New Outfit"
+    btnDiv.appendChild(addBtn)
+    app.appendChild(btnDiv)
+  }
+
   createCard(){
     const card = document.createElement('div')
     card.className = "card text-center "

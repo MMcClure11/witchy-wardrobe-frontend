@@ -30,6 +30,7 @@ function displayOutfits(){
   outfitsBtn.addEventListener("click", () => {
     app.innerHTML = "";
     initOutfits();
+    Outfit.addOutfitBtn();
   })
 }
 
