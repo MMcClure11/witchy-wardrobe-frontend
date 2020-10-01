@@ -8,7 +8,7 @@ class Item {
     this.item = item
     this.card = this.createCard()
     this.constructor.all.push(this)
-    console.log(Item.all)
+    // console.log(Item.all)
   }
 
   static addSortBtn(){
@@ -18,6 +18,7 @@ class Item {
     <option value="times_used">Times Used</option>
   </select>`
   app.appendChild(div)
+  document.getElementById("sort").addEventListener("change", this.handleSort)
   }
 
   static addItemBtn() {
@@ -37,7 +38,8 @@ class Item {
     card.className = "card text-center"
     card.dataset.id = this.item.id
     this.cardContent(card)
-    app.appendChild(card)
+    itemCollection.appendChild(card)
+    app.appendChild(itemCollection)
     return card
   }
 
@@ -138,6 +140,16 @@ class Item {
       }
     })
     .catch(error => alert(error))
+  }
+
+  static handleSort = (e) => {
+    this.sort = e.target.value
+    this.rerenderAll()
+    console.log(this.sort)
+  }
+
+  static rerenderAll(){
+    console.log(itemCollection)
   }
 
 }
