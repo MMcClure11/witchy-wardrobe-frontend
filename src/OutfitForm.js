@@ -82,4 +82,17 @@ class OutfitForm {
     })
     .catch(error => alert(error))
   }
+
+  static outfitEditHandler(editBtn, editOutfitForm, name, likes, items){
+    editBtn.addEventListener("click", () => {
+      modal.style.display = "block"
+      modalContent.append(editOutfitForm)
+      OutfitForm.renderEditFormContent(editOutfitForm, name, likes, items)
+    })
+  }
+
+  static renderEditFormContent(editOutfitForm, name, likes, items){
+    
+  }
+
 }

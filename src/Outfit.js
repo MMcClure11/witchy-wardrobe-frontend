@@ -71,7 +71,6 @@ class Outfit {
 
     const editOutfitForm = document.createElement('form')
     OutfitForm.outfitEditHandler(editBtn, editOutfitForm, name, likes, this.outfit.items)
-    console.log(this.outfit.items)
     card.append(outfitName, outfitLikes, outfitContainer)
   }
 
