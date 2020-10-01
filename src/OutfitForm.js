@@ -69,6 +69,7 @@ class OutfitForm {
       likes: e.target.likes.value,
       item_ids: itemIdsArray
     }
+    // console.log(newOutfit)
     ApiService.postOutfit(newOutfit)
     .then(outfit => {
       if(outfit.errors){
@@ -129,7 +130,7 @@ class OutfitForm {
           // itemsCheck.innerHTML += `<input class="checks" type="checkbox" id="${item.id}" name="${item.name}">
           // <label>${item.name}</label>`
           let checkbox = document.createElement('input')
-          checkbox.class = "checks"
+          checkbox.className = "checks"
           checkbox.type = "checkbox"
           checkbox.id = item.id
           checkbox.name = item.name

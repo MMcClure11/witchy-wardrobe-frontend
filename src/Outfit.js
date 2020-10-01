@@ -71,6 +71,23 @@ class Outfit {
 
     const editOutfitForm = document.createElement('form')
     OutfitForm.outfitEditHandler(editBtn, editOutfitForm, name, likes, this.outfit.items)
+    editOutfitForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const checks = Array.from(e.target.querySelectorAll(".checks"))
+      // console.log(checks)
+      const checkedItems = checks.filter( item => item.checked )
+      let itemIdsArray = checkedItems.map( item => parseInt(item.id))
+      // console.log(this.outfit.id)
+      const editedOutfit = {
+        name: e.target.name.value,
+        likes: e.target.likes.value,
+        item_ids: itemIdsArray
+      }
+      // console.log(editedOutfit)
+      this.updateOutfitHandler(editedOutfit, card)
+    })
+    
+    
     card.append(outfitName, outfitLikes, outfitContainer)
   }
 
