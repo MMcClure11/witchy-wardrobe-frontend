@@ -56,6 +56,12 @@ class Outfit {
       imagesDiv.append(itemImgDiv)
     });
 
+    const deleteBtn = document.createElement('p')
+    deleteBtn.className ='btn'
+    deleteBtn.id = 'outfit-delete-btn'
+    deleteBtn.innerText = "x"
+    outfitName.appendChild(deleteBtn)
+
     card.append(outfitName, outfitLikes, outfitContainer)
   }
 

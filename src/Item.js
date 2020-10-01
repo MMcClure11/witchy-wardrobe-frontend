@@ -89,7 +89,7 @@ class Item {
     })
 
     const deleteBtn = document.createElement('p')
-    deleteBtn.className = 'btn'
+    deleteBtn.className = 'btn btn-sm'
     deleteBtn.id = 'delete-btn'
     deleteBtn.innerText = "x"
     this.itemDeleteHandler(deleteBtn, card)
