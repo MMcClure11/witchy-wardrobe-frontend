@@ -105,4 +105,10 @@ class Outfit {
     })
   }
 
+  updateOutfitHandler(editedOutfit, card){
+    // console.log(this.outfit.id)
+    ApiService.updateOutfit(this.outfit.id, editedOutfit)
+    .then(console.log)
+  }
+
 }
