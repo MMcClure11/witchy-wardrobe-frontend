@@ -60,9 +60,18 @@ class Outfit {
     deleteBtn.className ='btn'
     deleteBtn.id = 'outfit-delete-btn'
     deleteBtn.innerText = "x"
+    this.outfitDeleteHandler(deleteBtn, card)
     outfitName.appendChild(deleteBtn)
 
     card.append(outfitName, outfitLikes, outfitContainer)
+  }
+
+  outfitDeleteHandler(deleteBtn, card){
+    deleteBtn.addEventListener("click", () => {
+      ApiService.deleteOutfit(this.outfit.id)
+        .then(() => card.remove())
+        .catch(error => alert(error))
+    })
   }
 
 }
