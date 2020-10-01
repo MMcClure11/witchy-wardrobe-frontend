@@ -91,7 +91,7 @@ class OutfitForm {
     })
   }
 
-  static renderEditFormContent(editOutfitForm, name, likes, items){
+  static renderEditFormContent(editOutfitForm, name, likes, selectedItems){
     editOutfitForm.innerHTML = ""
     const outfitNameDiv = document.createElement('div')
     outfitNameDiv.className = 'form-group'
@@ -123,11 +123,24 @@ class OutfitForm {
     checkboxLabel.innerText = "Pick your clothes for your Outfit:"
     itemsCheckContainer.append(checkboxLabel, itemsCheck)
 
-    ApiService.getAllItems()
+    ApiService.getAllItems(selectedItems)
       .then(items => {
         items.forEach(item => {
-          itemsCheck.innerHTML += `<input class="checks" type="checkbox" id="${item.id}" name="${item.name}">
-          <label>${item.name}</label>`
+          // itemsCheck.innerHTML += `<input class="checks" type="checkbox" id="${item.id}" name="${item.name}">
+          // <label>${item.name}</label>`
+          let checkbox = document.createElement('input')
+          checkbox.class = "checks"
+          checkbox.type = "checkbox"
+          checkbox.id = item.id
+          checkbox.name = item.name
+          let checkLabel = document.createElement('label')
+          checkLabel.innerText = item.name
+          selectedItems.forEach( item => {
+            if(item.name === checkbox.name){
+              checkbox.checked = true
+            }
+          })
+          itemsCheck.append(checkbox, checkLabel)
         })
       })
 
