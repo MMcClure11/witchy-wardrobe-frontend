@@ -69,7 +69,13 @@ class Outfit {
   outfitDeleteHandler(deleteBtn, card){
     deleteBtn.addEventListener("click", () => {
       ApiService.deleteOutfit(this.outfit.id)
-        .then(() => card.remove())
+        .then(obj => {
+          if(obj.error){
+            alert(obj.error)
+          } else {
+            card.remove()
+          }
+        })
         .catch(error => alert(error))
     })
   }
