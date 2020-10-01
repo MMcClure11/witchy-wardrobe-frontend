@@ -1,7 +1,14 @@
 class Item {
+
+  static all = []
+  static sort = "alphabetical"
+  // console.log(Item.all)
+
   constructor(item){
     this.item = item
     this.card = this.createCard()
+    this.constructor.all.push(this)
+    console.log(Item.all)
   }
 
   static addItemBtn() {
