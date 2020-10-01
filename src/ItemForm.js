@@ -168,7 +168,6 @@ class ItemForm {
 
   static handleFormSubmit(e){
     e.preventDefault()
-    // modal.style.display = "none"
     const newItem = {
       name: e.target.name.value,
       image: e.target.image.value,
