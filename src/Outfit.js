@@ -69,6 +69,9 @@ class Outfit {
     editBtn.innerText = "Edit"
     outfitContainer.appendChild(editBtn)
 
+    const editOutfitForm = document.createElement('form')
+    OutfitForm.outfitEditHandler(editBtn, editOutfitForm, name, likes, this.outfit.items)
+    console.log(this.outfit.items)
     card.append(outfitName, outfitLikes, outfitContainer)
   }
 
