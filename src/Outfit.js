@@ -63,6 +63,12 @@ class Outfit {
     this.outfitDeleteHandler(deleteBtn, card)
     outfitName.appendChild(deleteBtn)
 
+    const editBtn =  document.createElement('p')
+    editBtn.className = 'card-footer btn'
+    editBtn.id = 'outfit-edit-btn'
+    editBtn.innerText = "Edit"
+    outfitContainer.appendChild(editBtn)
+
     card.append(outfitName, outfitLikes, outfitContainer)
   }
 
