@@ -108,7 +108,18 @@ class Outfit {
   updateOutfitHandler(editedOutfit, card){
     // console.log(this.outfit.id)
     ApiService.updateOutfit(this.outfit.id, editedOutfit)
-    .then(console.log)
+    .then(updatedOutfit => {
+      if (updatedOutfit.errors){
+        alert(updatedOutfit.errors)
+      } else {
+        this.outfit = updatedOutfit
+        card.innerHTML = ""
+        this.cardContent(card)
+        modal.style.display = "none"
+        modal.querySelector("form").remove()
+      }
+    })
+    .catch(error => alert(error))
   }
 
 }
