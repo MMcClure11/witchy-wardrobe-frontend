@@ -11,6 +11,15 @@ class Item {
     console.log(Item.all)
   }
 
+  static addSortBtn(){
+    const div = document.createElement('div')
+    div.innerHTML = ` <select id="sort">
+    <option value="alphabetical">Alphabetical</option>
+    <option value="times_used">Times Used</option>
+  </select>`
+  app.appendChild(div)
+  }
+
   static addItemBtn() {
     const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
