@@ -103,7 +103,7 @@ class OutfitForm {
     const submitBtn = document.createElement('button')
     submitBtn.className = 'btn'
     submitBtn.innerText = "Submit"
-
+    
     if(editOutfitForm){
       editOutfitForm.innerHTML = ""
       editOutfitForm.append(outfitNameDiv, outfitLikesDiv, itemsCheckContainer, submitBtn)
