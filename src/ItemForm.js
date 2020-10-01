@@ -108,7 +108,7 @@ class ItemForm {
     categorySelector.id = 'select-category'
     categorySelector.name = 'category'
     categorySelector.className = 'form-control'
-    ItemForm.categoryDropdown(categorySelector)
+    ItemForm.categoryDropdown(categorySelector, category)
   
     if(name){
       itemNameInput.value = name
