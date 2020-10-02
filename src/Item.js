@@ -159,7 +159,8 @@ class Item {
 
   static rerenderAll(){
     itemCollection.innerHTML = ""
-    // this.sortedItemCards().forEach( itemCard => itemCard.createCard())
+    this.sortedItemCards().forEach(itemCard => itemCard.createCard())
+    // this.all.forEach(itemCard => itemCard.createCard())
   }
 
 }
