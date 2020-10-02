@@ -7,14 +7,12 @@ class ApiService {
 
   static sortItems(sort){
     let sortParams = `?sort=${sort}`
-    // console.log(sortParams)
     return fetch(`${ITEMS_URL}/${sortParams}`)
     .then(res => res.json())
   }
 
   static filterItems(filter){
     let filterParams = `?filter=${filter}`
-    // console.log(sortParams)
     return fetch(`${ITEMS_URL}/${filterParams}`)
     .then(res => res.json())
   }
