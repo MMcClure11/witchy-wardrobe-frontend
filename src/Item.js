@@ -11,7 +11,7 @@ class Item {
     sortForm.className = 'form-inline'
     sortForm.innerHTML = ` 
     <div class="form-group">
-    <label for="sort">Sort By:</label>
+    <label class="ml-2 mr-1"for="sort">Sort By:</label>
     <select class='form-control' name="sort" id="sort">
       <option value="alphabetical">Alphabetical</option>
       <option value="times_used">Times Used</option>
@@ -35,7 +35,7 @@ class Item {
     filterForm.className = 'form-inline'
     filterForm.innerHTML = `
     <div class="form-group">
-    <label for="filter">Filter By:</label>
+    <label class="ml-2 mr-1"for="filter">Filter By:</label>
     <select class='form-control' name="filter" id="filter">
       <option value="all">All</option>
       <option value="1">Outer Wear</option>
