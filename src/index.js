@@ -5,6 +5,7 @@ const OUTFITS_URL = `${BASE_URL}/outfits`;
 const body = document.querySelector('body');
 const app = document.createElement('div');
 const itemCollection = document.createElement('div');
+itemCollection.className = 'justify-content-center'
 itemCollection.id = "item-collection"
 const itemsBtn = document.querySelector("#items-btn");
 const outfitsBtn = document.querySelector("#outfits-btn");
@@ -32,6 +33,7 @@ function displayItems(){
 function displayOutfits(){
   outfitsBtn.addEventListener("click", () => {
     app.innerHTML = "";
+    itemCollection.innerHTML = "";
     initOutfits();
     Outfit.addOutfitBtn();
   })
