@@ -16,6 +16,8 @@ class Item {
     div.innerHTML = ` <select id="sort">
     <option value="alphabetical">Alphabetical</option>
     <option value="times_used">Times Used</option>
+    <option value="color">Color</option>
+    <option value="cost">Cost</option>
   </select>`
   app.appendChild(div)
   document.getElementById("sort").addEventListener("change", this.handleSort)
@@ -154,6 +156,12 @@ class Item {
     }
     if (this.sort === "times_used"){
       return [...this.all].sort((itemA, itemB) => itemB.item.times_used - itemA.item.times_used)
+    }
+    if (this.sort === "color"){
+      return [...this.all].sort((itemA, itemB) => itemA.item.color.localeCompare(itemB.item.color))
+    }
+    if (this.sort === "cost"){
+      return [...this.all].sort((itemA, itemB) => itemB.item.cost - itemA.item.cost)
     }
   }
 
