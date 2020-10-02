@@ -145,11 +145,21 @@ class Item {
   static handleSort = (e) => {
     this.sort = e.target.value
     this.rerenderAll()
-    console.log(this.sort)
+    // console.log(this.sort) => times_used or alphabetical
+  }
+
+  static sortedItemCards(){
+    if (this.sort === "alphabetical"){
+      return [...this.all].sort((itemA, itemB) => itemA.item.name.localeCompare(itemB.item.name))
+    }
+    if (this.sort === "times_used"){
+      return [...this.all].sort((itemA, itemB) => itemB.item.times_used - itemA.item.times_used)
+    }
   }
 
   static rerenderAll(){
-    console.log(itemCollection)
+    itemCollection.innerHTML = ""
+    // this.sortedItemCards().forEach( itemCard => itemCard.createCard())
   }
 
 }
