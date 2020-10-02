@@ -24,8 +24,8 @@ function displayItems(){
   itemsBtn.addEventListener("click", () => {
     app.innerHTML = "";
     initItems();
-    Item.addSortBtn();
     Item.addItemBtn();
+    Item.addSortBtn();
   })
 }
 

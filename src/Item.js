@@ -1,26 +1,24 @@
 class Item {
 
-  // static all = []
-  // static sort = "alphabetical"
-  // console.log(Item.all)
-
   constructor(item){
     this.item = item
     this.card = this.createCard()
-    // this.constructor.all.push(this)
-    // console.log(Item.all)
   }
 
   static addSortBtn(){
     const sortForm = document.createElement('form')
+    sortForm.id = 'sort-form'
+    sortForm.className = 'form-inline'
     sortForm.innerHTML = ` 
-    <select name="sort" id="sort">
+    <div class="form-group">
+    <select class='form-control' name="sort" id="sort">
       <option value="alphabetical">Alphabetical</option>
       <option value="times_used">Times Used</option>
       <option value="color">Color</option>
       <option value="cost">Cost</option>
     </select>
-    <button class="btn">Sort</button>
+    </div>
+    <button class="btn ml-3">Sort</button>
     `
   app.appendChild(sortForm)
   sortForm.addEventListener("submit", (e) => {
@@ -32,13 +30,14 @@ class Item {
   }
 
   static addItemBtn() {
-    const btnDiv = document.createElement('div')
+    // const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
+    addBtn.id = "item-add-btn"
     // addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
-    btnDiv.appendChild(addBtn)
-    app.appendChild(btnDiv)
+    // btnDiv.appendChild(addBtn)
+    app.appendChild(addBtn)
 
     ItemForm.itemModalHandler(addBtn)
   }
@@ -154,7 +153,6 @@ class Item {
 
   static handleSort = (e) => {
     this.sort = e.target.sort.value
-    // console.log(this.sort)
     ApiService.sortItems(this.sort)
     .then(items => {
       items.forEach( item => {
@@ -162,29 +160,6 @@ class Item {
       })
     })
     .catch(error => alert(error))
-    // this.rerenderAll()
-    // console.log(this.sort) => times_used or alphabetical
   }
-
-  // static sortedItemCards(){
-  //   if (this.sort === "alphabetical"){
-  //     return [...this.all].sort((itemA, itemB) => itemA.item.name.localeCompare(itemB.item.name))
-  //   }
-  //   if (this.sort === "times_used"){
-  //     return [...this.all].sort((itemA, itemB) => itemB.item.times_used - itemA.item.times_used)
-  //   }
-  //   if (this.sort === "color"){
-  //     return [...this.all].sort((itemA, itemB) => itemA.item.color.localeCompare(itemB.item.color))
-  //   }
-  //   if (this.sort === "cost"){
-  //     return [...this.all].sort((itemA, itemB) => itemB.item.cost - itemA.item.cost)
-  //   }
-  // }
-
-  // static rerenderAll(){
-  //   itemCollection.innerHTML = ""
-  //   this.sortedItemCards().forEach(itemCard => itemCard.createCard())
-  //   // this.all.forEach(itemCard => itemCard.createCard())
-  // }
 
 }

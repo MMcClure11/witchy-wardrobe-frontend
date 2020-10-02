@@ -10,6 +10,15 @@ body {
   color: #F7F9FB;
 }
 
+#item-add-btn {
+  margin-left: 2.5rem;
+}
+
+#sort-form {
+  float: right;
+  margin-right: 3rem;
+}
+
 .card {
   border: grey solid 1px;
   border-radius: 5px; 
