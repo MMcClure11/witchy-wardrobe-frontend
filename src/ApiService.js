@@ -5,6 +5,13 @@ class ApiService {
     .then(res => res.json())
   }
 
+  static sortItems(sort){
+    let sortParams = `?sort=${sort}`
+    // console.log(sortParams)
+    return fetch(`${ITEMS_URL}/${sortParams}`)
+    .then(res => res.json())
+  }
+
   static getAllCategories(){
     return fetch(CATEGORY_URL)
     .then(res => res.json())
