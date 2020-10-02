@@ -11,6 +11,7 @@ class Item {
     sortForm.className = 'form-inline'
     sortForm.innerHTML = ` 
     <div class="form-group">
+    <label for="sort">Sort By:</label>
     <select class='form-control' name="sort" id="sort">
       <option value="alphabetical">Alphabetical</option>
       <option value="times_used">Times Used</option>
@@ -18,25 +19,48 @@ class Item {
       <option value="cost">Cost</option>
     </select>
     </div>
-    <button class="btn ml-3">Sort</button>
+    <button class="btn ml-3">Submit</button>
     `
   app.appendChild(sortForm)
-  sortForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    // console.log(e.target.sort.value)
-    itemCollection.innerHTML = ""
-    this.handleSort(e);
-  })
+    sortForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      itemCollection.innerHTML = ""
+      this.handleSort(e);
+    })
+  }
+
+  static addFilter(){
+    const filterForm = document.createElement('form')
+    filterForm.id = 'filter-form'
+    filterForm.className = 'form-inline'
+    filterForm.innerHTML = `
+    <div class="form-group">
+    <label for="filter">Filter By:</label>
+    <select class='form-control' name="filter" id="filter">
+      <option value="1">Outer Wear</option>
+      <option value="2">Tops</option>
+      <option value="3">Bottoms</option>
+      <option value="4">Foot Wear</option>
+      <option value="5">Accessories</option>
+      <option value="6">Intimates</option>
+    </select>
+    </div>
+    <button class="btn ml-3">Submit</button>
+    `
+    let sort = document.querySelector('#sort-form')
+    sort.appendChild(filterForm)
+    filterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      itemCollection.innerHTML = ""
+      this.handleFilter(e);
+    })
   }
 
   static addItemBtn() {
-    // const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
     addBtn.id = "item-add-btn"
-    // addBtn.className = "add-button"
     addBtn.innerText = "Add a New Clothing Item"
-    // btnDiv.appendChild(addBtn)
     app.appendChild(addBtn)
 
     ItemForm.itemModalHandler(addBtn)
@@ -82,7 +106,6 @@ class Item {
     const itemTimesUsed = document.createElement('p')
     itemTimesUsed.innerText = `Worn ${times_used} times. +`
     itemTimesUsed.addEventListener("click", () => {
-      // console.log(this.item.id)
       ApiService.increaseTimesUsed(this.item.id)
         .then(updatedItem => {
           this.item = updatedItem
@@ -100,7 +123,6 @@ class Item {
     ItemForm.itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, this.item.category.name)
     editItemForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // console.log(this.item.id)
       const editedItem = {
         name: e.target.name.value,
         image: e.target.image.value,
@@ -112,7 +134,6 @@ class Item {
         times_used: e.target.times_used.value,
         category_name: e.target.category.value
       }
-      // console.log(editedItem)
       this.updateItemHandler(editedItem, card)
     })
 
@@ -154,6 +175,17 @@ class Item {
   static handleSort = (e) => {
     this.sort = e.target.sort.value
     ApiService.sortItems(this.sort)
+    .then(items => {
+      items.forEach( item => {
+        new Item(item)
+      })
+    })
+    .catch(error => alert(error))
+  }
+
+  static handleFilter = (e) => {
+    this.filter = e.target.filter.value
+    ApiService.filterItems(this.filter)
     .then(items => {
       items.forEach( item => {
         new Item(item)

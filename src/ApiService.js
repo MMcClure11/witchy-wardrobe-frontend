@@ -12,6 +12,13 @@ class ApiService {
     .then(res => res.json())
   }
 
+  static filterItems(filter){
+    let filterParams = `?filter=${filter}`
+    // console.log(sortParams)
+    return fetch(`${ITEMS_URL}/${filterParams}`)
+    .then(res => res.json())
+  }
+
   static getAllCategories(){
     return fetch(CATEGORY_URL)
     .then(res => res.json())
