@@ -37,6 +37,7 @@ class Item {
     <div class="form-group">
     <label for="filter">Filter By:</label>
     <select class='form-control' name="filter" id="filter">
+      <option value="all">All</option>
       <option value="1">Outer Wear</option>
       <option value="2">Tops</option>
       <option value="3">Bottoms</option>
