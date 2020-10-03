@@ -87,7 +87,7 @@ class Item {
     const itemImg = document.createElement('img')
     itemImg.className = 'card-img float-right'
     itemImg.src = image
-    itemImg.alt = name
+    itemImg.alt = `${name}: ${color}`
    
     const infoDiv = document.createElement('div')
     infoDiv.id = 'info-div'

@@ -50,7 +50,7 @@ class Outfit {
       itemImgDiv.className = 'item-outfit-div'
       let itemImgOutfit = document.createElement('img')
       itemImgOutfit.src = item.image
-      itemImgOutfit.alt = item.name
+      itemImgOutfit.alt = `${item.name}: ${item.color}`
       itemImgOutfit.className = "item-outfit-image"
       itemImgDiv.appendChild(itemImgOutfit)
       // li.appendChild(itemImgOutfit)
