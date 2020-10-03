@@ -57,6 +57,27 @@ class Item {
     })
   }
 
+  static addSearch(){
+    const searchForm = document.createElement('form')
+    searchForm.id = 'search-form'
+    searchForm.className = 'form-inline'
+    searchForm.innerHTML = `
+    <div class="form-group">
+      <label class="ml-2 mr-1"for="filter">Search by Name:</label>
+      <input class="form-control" name="query">
+      </div>
+    <button class="btn ml-3">Submit</button>
+    `
+    let filter = document.querySelector("#filter-form")
+    filter.appendChild(searchForm)
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // console.log(e.target)
+      itemCollection.innerHTML = ""
+      this.handleSearch(e);
+    })
+  }
+
   static addItemBtn() {
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
@@ -193,6 +214,18 @@ class Item {
       })
     })
     .catch(error => alert(error))
+  }
+
+  static handleSearch = (e) => {
+    this.search = e.target.query.value
+    ApiService.searchItems(this.search)
+    .then(items => {
+      items.forEach( item => {
+        new Item(item)
+      })
+    })
+    .catch(error => alert(error))
+    e.target.reset();
   }
 
 }

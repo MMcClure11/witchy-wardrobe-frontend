@@ -18,6 +18,12 @@ class ApiService {
     .then(res => res.json())
   }
 
+  static searchItems(query){
+    let searchParams = `?query=${query}`
+    return fetch(`${ITEMS_URL}/${searchParams}`)
+    .then(res => res.json())
+  }
+
   static getAllCategories(){
     return fetch(CATEGORY_URL)
     .then(res => res.json())

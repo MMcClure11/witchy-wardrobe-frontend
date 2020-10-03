@@ -28,6 +28,7 @@ function displayItems(){
     Item.addItemBtn();
     Item.addSortBtn();
     Item.addFilter();
+    Item.addSearch();
   })
 }
 
