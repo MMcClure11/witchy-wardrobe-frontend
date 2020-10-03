@@ -44,16 +44,18 @@ class Outfit {
     outfitContainer.appendChild(imagesDiv)
 
     this.outfit.items.forEach(item => {
-      // let li = document.createElement('li')
-      // li.innerText = `${item.name}`
       const itemImgDiv = document.createElement('div')
       itemImgDiv.className = 'item-outfit-div'
-      let itemImgOutfit = document.createElement('img')
-      itemImgOutfit.src = item.image
-      itemImgOutfit.alt = `${item.name}: ${item.color}`
-      itemImgOutfit.className = "item-outfit-image"
-      itemImgDiv.appendChild(itemImgOutfit)
-      // li.appendChild(itemImgOutfit)
+      itemImgDiv.innerHTML = `<img src=${item.image} class='item-outfit-image' 
+      alt='${item.name}: ${item.color}' data-toggle="popover" tabindex="50" 
+      data-animation="true" data-html="true" data-trigger="focus" 
+      title="Item Details" data-content="<p><b>Name:</b></p> <p>${item.name}</p> 
+      <p><b>Made In:</b></p> <p>${item.manufacture_location}</p>                       
+      <p><b>Store:</b></p> <p>${item.store}</p>
+      <p><b>Times Used:</b></p> <p>${item.times_used}</p>"></img>`
+      $(function () {
+        $('[data-toggle="popover"]').popover()
+      })
       imagesDiv.append(itemImgDiv)
     });
 

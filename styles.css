@@ -71,6 +71,17 @@ body {
   margin-bottom: .5rem;
 }
 
+.popover-header {
+  background-color: #5085A5;
+  color: #f7f9fb;
+  font-size: x-large;
+}
+
+.popover-body {
+  background-color: #5085A5;
+  color: #f7f9fb;
+  font-size: large;
+}
 /*///////////////////////////*/
 
 /* The Modal (background) */
