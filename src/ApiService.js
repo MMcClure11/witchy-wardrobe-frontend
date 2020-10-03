@@ -5,16 +5,10 @@ class ApiService {
     .then(res => res.json())
   }
 
-  static sortItems(sort){
+  static sortItems(sort, filter){
     let sortParams = `?sort=${sort}`
-    // let filterParams = `?filter=${filter}`
-    return fetch(`${ITEMS_URL}/${sortParams}`)
-    .then(res => res.json())
-  }
-
-  static filterItems(filter){
-    let filterParams = `?filter=${filter}`
-    return fetch(`${ITEMS_URL}/${filterParams}`)
+    let filterParams = `&filter=${filter}`
+    return fetch(`${ITEMS_URL}/${sortParams}${filterParams}`)
     .then(res => res.json())
   }
 

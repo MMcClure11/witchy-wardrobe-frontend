@@ -26,8 +26,7 @@ function displayItems(){
     app.innerHTML = "";
     initItems();
     Item.addItemBtn();
-    Item.addSortBtn();
-    Item.addFilter();
+    Item.sortAndFilter();
     Item.addSearch();
   })
 }

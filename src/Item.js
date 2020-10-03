@@ -5,7 +5,7 @@ class Item {
     this.card = this.createCard()
   }
 
-  static addSortBtn(){
+  static sortAndFilter(){
     const sortForm = document.createElement('form')
     sortForm.id = 'sort-form'
     sortForm.className = 'form-inline'
@@ -18,23 +18,6 @@ class Item {
       <option value="color">Color</option>
       <option value="cost">Cost</option>
     </select>
-    </div>
-    <button class="btn ml-3">Submit</button>
-    `
-  app.appendChild(sortForm)
-    sortForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      itemCollection.innerHTML = ""
-      this.handleSort(e);
-    })
-  }
-
-  static addFilter(){
-    const filterForm = document.createElement('form')
-    filterForm.id = 'filter-form'
-    filterForm.className = 'form-inline'
-    filterForm.innerHTML = `
-    <div class="form-group">
     <label class="ml-2 mr-1"for="filter">Filter By:</label>
     <select class='form-control' name="filter" id="filter">
       <option value="all">All</option>
@@ -48,12 +31,11 @@ class Item {
     </div>
     <button class="btn ml-3">Submit</button>
     `
-    let sort = document.querySelector('#sort-form')
-    sort.appendChild(filterForm)
-    filterForm.addEventListener("submit", (e) => {
+  app.appendChild(sortForm)
+    sortForm.addEventListener("submit", (e) => {
       e.preventDefault();
       itemCollection.innerHTML = ""
-      this.handleFilter(e);
+      this.handleSort(e);
     })
   }
 
@@ -68,11 +50,10 @@ class Item {
       </div>
     <button class="btn ml-3">Submit</button>
     `
-    let filter = document.querySelector("#filter-form")
-    filter.appendChild(searchForm)
+    let sort = document.querySelector("#sort-form")
+    sort.appendChild(searchForm)
     searchForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // console.log(e.target)
       itemCollection.innerHTML = ""
       this.handleSearch(e);
     })
@@ -196,18 +177,8 @@ class Item {
 
   static handleSort = (e) => {
     this.sort = e.target.sort.value
-    ApiService.sortItems(this.sort)
-    .then(items => {
-      items.forEach( item => {
-        new Item(item)
-      })
-    })
-    .catch(error => alert(error))
-  }
-
-  static handleFilter = (e) => {
     this.filter = e.target.filter.value
-    ApiService.filterItems(this.filter)
+    ApiService.sortItems(this.sort, this.filter)
     .then(items => {
       items.forEach( item => {
         new Item(item)
