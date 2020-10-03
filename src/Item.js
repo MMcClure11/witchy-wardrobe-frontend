@@ -36,7 +36,7 @@ class Item {
   app.appendChild(sortForm)
     sortForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      itemCollection.innerHTML = ""
+      // itemCollection.innerHTML = ""
       this.handleSort(e);
     })
   }
@@ -163,9 +163,14 @@ class Item {
     this.search = e.target.query.value
     ApiService.sortItems(this.sort, this.filter, this.search)
     .then(items => {
-      items.forEach( item => {
-        new Item(item)
-      })
+      if(items.length < 1){
+        alert("No items found by that name")
+      } else {
+        itemCollection.innerHTML = ""
+        items.forEach( item => {
+          new Item(item)
+        })
+    }
     })
     .catch(error => alert(error))
     // e.target.query.value = ""
