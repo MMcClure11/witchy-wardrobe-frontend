@@ -28,6 +28,8 @@ class Item {
       <option value="5">Accessories</option>
       <option value="6">Intimates</option>
     </select>
+    <label class="ml-2 mr-1"for="filter">Search by Name:</label>
+    <input class="form-control" name="query">
     </div>
     <button class="btn ml-3">Submit</button>
     `
@@ -36,26 +38,6 @@ class Item {
       e.preventDefault();
       itemCollection.innerHTML = ""
       this.handleSort(e);
-    })
-  }
-
-  static addSearch(){
-    const searchForm = document.createElement('form')
-    searchForm.id = 'search-form'
-    searchForm.className = 'form-inline'
-    searchForm.innerHTML = `
-    <div class="form-group">
-      <label class="ml-2 mr-1"for="filter">Search by Name:</label>
-      <input class="form-control" name="query">
-      </div>
-    <button class="btn ml-3">Submit</button>
-    `
-    let sort = document.querySelector("#sort-form")
-    sort.appendChild(searchForm)
-    searchForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      itemCollection.innerHTML = ""
-      this.handleSearch(e);
     })
   }
 
@@ -178,25 +160,15 @@ class Item {
   static handleSort = (e) => {
     this.sort = e.target.sort.value
     this.filter = e.target.filter.value
-    ApiService.sortItems(this.sort, this.filter)
-    .then(items => {
-      items.forEach( item => {
-        new Item(item)
-      })
-    })
-    .catch(error => alert(error))
-  }
-
-  static handleSearch = (e) => {
     this.search = e.target.query.value
-    ApiService.searchItems(this.search)
+    ApiService.sortItems(this.sort, this.filter, this.search)
     .then(items => {
       items.forEach( item => {
         new Item(item)
       })
     })
     .catch(error => alert(error))
-    e.target.reset();
+    // e.target.query.value = ""
   }
 
 }
