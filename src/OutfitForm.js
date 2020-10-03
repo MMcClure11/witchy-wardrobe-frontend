@@ -73,21 +73,24 @@ class OutfitForm {
     outfitLikesDiv.append(outfitLikesLabel, outfitLikesInput)
 
     const itemsCheckContainer = document.createElement('div')
-    itemsCheckContainer.className = "items-check-container"
+    itemsCheckContainer.className = "items-check-container align-content-center"
     const itemsCheck = document.createElement('div')
+    itemsCheck.className = "form-check-container"
     const checkboxLabel = document.createElement('label')
     checkboxLabel.innerText = "Pick your clothes for your Outfit:"
-    itemsCheckContainer.append(checkboxLabel, itemsCheck)
 
     ApiService.getAllItems(selectedItems)
       .then(items => {
         items.forEach(item => {
+          let inputLabelDiv = document.createElement('div')
+          inputLabelDiv.className = 'form-check'
           let checkbox = document.createElement('input')
-          checkbox.className = "checks"
+          checkbox.className = "checks form-check-input"
           checkbox.type = "checkbox"
           checkbox.id = item.id
           checkbox.name = item.name
           let checkLabel = document.createElement('label')
+          checkLabel.className = 'form-check-label'
           checkLabel.innerText = item.name
           if(selectedItems){
             selectedItems.forEach( item => {
@@ -96,9 +99,12 @@ class OutfitForm {
               }
             })
           }
-          itemsCheck.append(checkbox, checkLabel)
+          inputLabelDiv.append(checkbox, checkLabel)
+          itemsCheck.appendChild(inputLabelDiv)
         })
       })
+
+      itemsCheckContainer.append(checkboxLabel, itemsCheck)
 
     const submitBtn = document.createElement('button')
     submitBtn.className = 'btn'
