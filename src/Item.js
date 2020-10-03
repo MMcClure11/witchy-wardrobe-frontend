@@ -36,7 +36,6 @@ class Item {
   app.appendChild(sortForm)
     sortForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      // itemCollection.innerHTML = ""
       this.handleSort(e);
     })
   }
