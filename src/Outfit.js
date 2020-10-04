@@ -30,6 +30,7 @@ class Outfit {
 
     const outfitName = document.createElement('h3')
     outfitName.className = 'h3 card-header'
+    outfitName.id = 'outfit-header'
     outfitName.innerText = name
 
     const outfitLikes = document.createElement('h5')
@@ -60,7 +61,7 @@ class Outfit {
     });
 
     const deleteBtn = document.createElement('p')
-    deleteBtn.className ='btn'
+    deleteBtn.className ='btn btn-sm'
     deleteBtn.id = 'outfit-delete-btn'
     deleteBtn.innerText = "x"
     this.outfitDeleteHandler(deleteBtn, card)
