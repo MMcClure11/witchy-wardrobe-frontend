@@ -135,9 +135,12 @@ class Outfit {
   }
 
   outfitLikesHandler(outfit){
-    // console.log(outfit)
     ApiService.increaseLikes(outfit.id)
-    .then(console.log)
+    .then(updateOutfit => {
+      this.outfit = updateOutfit
+      this.card.innerHTML = ""
+      this.cardContent(this.card)
+    })
   }
 
 }

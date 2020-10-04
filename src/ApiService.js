@@ -86,9 +86,9 @@ class ApiService {
   }
 
   static increaseLikes(outfitId){
-    return fetch(`${OUTFITS_URL}/${outfitId}`), {
-      method: 'POST',
-    }
+    return fetch(`${OUTFITS_URL}/${outfitId}`, {
+      method: 'PATCH',
+    })
     .then(res => res.json())
   }
 
