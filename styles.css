@@ -1,10 +1,16 @@
 body { 
-  background-image: url(https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/33134f75-0321-4ab8-98da-260bfd0b52a1);
+  background-image: url(https://images.unsplash.com/photo-1521866337281-e7207a7159c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
     background-size: 100%;
+    background-blend-mode: overlay;
+    background-color: #31708e;
     background-attachment: fixed;
     color: #F7F9FB; 
     font-family: 'Oxygen', sans-serif;
 }
+
+/* #nav {
+  height: 5rem;
+} */
 
 .btn {
   background-color: #31708E;
@@ -57,6 +63,10 @@ body {
   background-color: transparent;
   float: right;
   margin-bottom: .5rem;
+}
+
+#add-outfit-btn {
+  margin-left: 2.5rem;
 }
 
 #outfit-delete-btn {

@@ -9,6 +9,7 @@ class Outfit {
     const btnDiv = document.createElement('div')
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
+    addBtn.id = 'add-outfit-btn'
     addBtn.innerText = "Create a New Outfit"
     btnDiv.appendChild(addBtn)
     app.appendChild(btnDiv)
