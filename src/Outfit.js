@@ -35,10 +35,10 @@ class Outfit {
 
     const outfitLikes = document.createElement('h5')
     outfitLikes.className = 'h5 pt-2'
-    outfitLikes.innerText = `Loved ${likes} times.`
+    outfitLikes.id = 'outfit-likes'
+    outfitLikes.innerText = `❤️ ${likes}`
 
     const outfitContainer = document.createElement('div')
-    outfitContainer.innerText = "Items:"
 
     const imagesDiv = document.createElement('div')
     imagesDiv.className = 'images-div'
@@ -67,11 +67,15 @@ class Outfit {
     this.outfitDeleteHandler(deleteBtn, card)
     outfitName.appendChild(deleteBtn)
 
-    const editBtn =  document.createElement('p')
-    editBtn.className = 'card-footer btn'
+    const cardFooterDiv = document.createElement('div')
+    cardFooterDiv.className = 'card-footer'
+
+    const editBtn =  document.createElement('button')
+    editBtn.className = 'btn'
     editBtn.id = 'outfit-edit-btn'
     editBtn.innerText = "Edit"
-    outfitContainer.appendChild(editBtn)
+    cardFooterDiv.append(editBtn, outfitLikes)
+    outfitContainer.appendChild(cardFooterDiv)
 
     const editOutfitForm = document.createElement('form')
     OutfitForm.outfitEditHandler(editBtn, editOutfitForm, name, likes, this.outfit.items)
@@ -92,7 +96,7 @@ class Outfit {
     })
     
     
-    card.append(outfitName, outfitLikes, outfitContainer)
+    card.append(outfitName, outfitContainer)
   }
 
   outfitDeleteHandler(deleteBtn, card){

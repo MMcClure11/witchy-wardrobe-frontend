@@ -68,7 +68,7 @@ body {
 #outfit-card { 
   display: inline-grid;
   width: 22rem; 
-  height: 50rem; 
+  height: 45rem; 
   background-color:#687864;
   float: none; 
   margin: 2rem; 
@@ -84,13 +84,27 @@ body {
   display: flex; 
   flex-direction: column;
   flex-wrap: wrap;
-  height: 33rem;
+  height: 38rem;
 }
 
 .item-outfit-image {
   width: 5rem;
   height: auto;
   margin-bottom: .5rem;
+}
+
+.card-footer{
+  position:absolute;
+    bottom:0;
+    width: 90%;
+  }
+
+#outfit-edit-btn {
+  float: left;
+}
+
+#outfit-likes{ 
+  float: right;
 }
 
 .popover-header {
