@@ -28,6 +28,7 @@ function createAppDiv() {
 function displayItems(){
   itemsBtn.addEventListener("click", () => {
     app.innerHTML = "";
+    body.style.backgroundImage = "url(https://images.unsplash.com/photo-1483232539664-d89822fb5d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)"
     initItems();
     Item.addItemBtn();
     Item.sortAndFilter();
@@ -37,6 +38,7 @@ function displayItems(){
 function displayOutfits(){
   outfitsBtn.addEventListener("click", () => {
     app.innerHTML = "";
+    body.style.backgroundImage = "url(https://images.unsplash.com/photo-1483232539664-d89822fb5d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)"
     itemCollection.innerHTML = "";
     initOutfits();
     Outfit.addOutfitBtn();
