@@ -2,7 +2,8 @@ body {
   background-image: url(https://3dwarehouse.sketchup.com/warehouse/v1.0/publiccontent/33134f75-0321-4ab8-98da-260bfd0b52a1);
     background-size: 100%;
     background-attachment: fixed;
-    color: white; 
+    color: #F7F9FB; 
+    font-family: 'Oxygen', sans-serif;
 }
 
 .btn {
@@ -27,7 +28,8 @@ body {
   height: auto;
   display: inline-block;
   margin: 1rem 2rem;
-  background-color: rgb(134, 148, 134);
+  background-color: #687864;
+  color: #F7F9FB;
 }
 
 .card-img{
@@ -48,11 +50,16 @@ body {
   margin-bottom: .5rem;
 }
 
+#outfit-delete-btn {
+  float: right;
+  margin-bottom: .5rem;
+}
+
 #outfit-card { 
   display: inline-grid;
   width: 20rem; 
   height: 50rem; 
-  background-color: rgb(134, 148, 134);
+  background-color:#687864;
   float: none; 
   margin: 2rem; 
 }

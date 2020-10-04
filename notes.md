@@ -3,3 +3,6 @@
 http://localhost:3000/books?query=Name+of+the+Wind&commit=Search&filter=Title
 
 http://localhost:3000/books?query=Patrick+Rothfuss&commit=Search&filter=Author
+
+font-family: 'Rock Salt', cursive;
+font-family: 'Oxygen', sans-serif;
