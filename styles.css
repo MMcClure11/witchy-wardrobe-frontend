@@ -17,6 +17,49 @@ body {
   color: #8fc1e3;
 }
 
+.info-div {
+  margin-left: 2rem;
+}
+
+.card-header-tabs {
+  margin-right: 0;
+  margin-bottom: -.45rem;
+  margin-left: 0;
+  border-bottom: 0;
+}
+
+.nav-item {
+  background-color: #8fc1e3;
+  color: #F7F9FB;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.nav-link {
+  color: #F7F9FB;
+}
+
+.nav-link:hover {
+  color: #31708e;
+}
+
+.nav-tabs .nav-link.active {
+  color: #F7F9FB;
+  background-color: #31708e;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.tab-content {
+  color: #F7F9FB;
+  background-color: #31708e;
+  height: 25rem;
+  width: 25rem;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  border-top-right-radius: .5rem;
+  padding-left: .5rem;
+}
+
 .btn {
   background-color: #31708E;
   color: #F7F9FB;

@@ -18,7 +18,7 @@ createAppDiv();
 displayItems();
 displayOutfits();
 Home.renderHome();
-
+Home.renderInfo();
 
 function createAppDiv() {
   app.setAttribute('id', 'app-div')
