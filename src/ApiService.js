@@ -85,12 +85,7 @@ class ApiService {
     .then(res => res.json())
   }
 
-  static increaseLikes(outfitId){
-    return fetch(`${OUTFITS_URL}/${outfitId}`, {
-      method: 'PATCH',
-    })
-    .then(res => res.json())
-  }
+  static increaseLikes = (outfitId) => fetch(`${OUTFITS_URL}/${outfitId}`, {method: 'PATCH',}).then(res => res.json())
 
 
 }
