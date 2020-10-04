@@ -115,6 +115,7 @@ body {
 
 #outfit-likes{ 
   float: right;
+  cursor: pointer;
 }
 
 .popover-header {

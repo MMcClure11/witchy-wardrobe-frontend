@@ -85,5 +85,12 @@ class ApiService {
     .then(res => res.json())
   }
 
+  static increaseLikes(outfitId){
+    return fetch(`${OUTFITS_URL}/${outfitId}`), {
+      method: 'POST',
+    }
+    .then(res => res.json())
+  }
+
 
 }

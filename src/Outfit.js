@@ -38,6 +38,10 @@ class Outfit {
     outfitLikes.className = 'h5 pt-2'
     outfitLikes.id = 'outfit-likes'
     outfitLikes.innerText = `❤️ ${likes}`
+    outfitLikes.addEventListener("click", () => {
+      // console.log(this.outfit)
+      this.outfitLikesHandler(this.outfit)
+    })
 
     const outfitContainer = document.createElement('div')
 
@@ -96,7 +100,6 @@ class Outfit {
       this.updateOutfitHandler(editedOutfit, card)
     })
     
-    
     card.append(outfitName, outfitContainer)
   }
 
@@ -129,6 +132,12 @@ class Outfit {
       }
     })
     .catch(error => alert(error))
+  }
+
+  outfitLikesHandler(outfit){
+    // console.log(outfit)
+    ApiService.increaseLikes(outfit.id)
+    .then(console.log)
   }
 
 }
