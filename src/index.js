@@ -4,7 +4,8 @@ const CATEGORY_URL = `${BASE_URL}/categories`;
 const OUTFITS_URL = `${BASE_URL}/outfits`;
 const body = document.querySelector('body');
 const app = document.createElement('div');
-const logo = document.querySelector('#logo')
+const logo = document.querySelector('#logo');
+const nav = document.querySelector('nav')
 const itemCollection = document.createElement('div');
 itemCollection.className = 'justify-content-center'
 itemCollection.id = "item-collection"
@@ -17,7 +18,7 @@ createAppDiv();
 displayItems();
 displayOutfits();
 Home.renderHome();
-Home.createHeaderDiv();
+
 
 function createAppDiv() {
   app.setAttribute('id', 'app-div')

@@ -12,6 +12,11 @@ body {
   height: 5rem;
 } */
 
+#header {
+  font-family: 'Rock Salt', cursive;
+  color: #8fc1e3;
+}
+
 .btn {
   background-color: #31708E;
   color: #F7F9FB;
