@@ -32,6 +32,10 @@ body {
   color: #F7F9FB;
 }
 
+#card-header {
+  font-family: 'Rock Salt', cursive;
+}
+
 .card-img{
   height: auto;
   width: 10rem;
@@ -45,7 +49,12 @@ body {
   width: 12rem;
 }
 
+#times-used {
+  cursor: pointer;
+}
+
 #delete-btn {
+  background-color: transparent;
   float: right;
   margin-bottom: .5rem;
 }

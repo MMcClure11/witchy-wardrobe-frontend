@@ -65,6 +65,7 @@ class Item {
    
     const itemCategory = document.createElement('h4')
     itemCategory.className = 'h4 card-header'
+    itemCategory.id = 'card-header'
     itemCategory.innerText = `${this.item.category.name} - ${name}`
     
     const itemImg = document.createElement('img')
@@ -88,6 +89,7 @@ class Item {
     itemCost.innerText = `Cost: $${cost}`
   
     const itemTimesUsed = document.createElement('p')
+    itemTimesUsed.id = 'times-used'
     itemTimesUsed.innerText = `Worn ${times_used} times. +`
     itemTimesUsed.addEventListener("click", () => {
       ApiService.increaseTimesUsed(this.item.id)
