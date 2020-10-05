@@ -29,8 +29,16 @@ class Home {
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade show active" id="home">
-            <h4 class="mt-2">Home tab content</h4>
-            <p>Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui. Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+            <h4 class="mt-2">Using Witchy Wardrobe</h4>
+            <p> The fashion  industry produces 10% of all humanity's carbon emissions, is the second-largest consumer of the world's water supply, and pollutes the oceans with microplastics.</p>
+            <p> There are many ways you can reduce your personal impact including: </p>
+            <ul>
+              <li>Buy used clothing</li>
+              <li>Minimize how much clothing you buy and throw away each year</li>
+              <li>Shop locally</li>
+              <li>Find sustainable and ethical clothing brands</li>
+            </ul>
+            <p>You can used Witchy Wardrobe to help you keep track of your wardrobe! Check out the other tabs for ideas for helping you minimize your wardrobe.</p>
         </div>
         <div class="tab-pane fade" id="profile">
             <h4 class="mt-2">Profile tab content</h4>

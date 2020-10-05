@@ -52,12 +52,13 @@ body {
 .tab-content {
   color: #F7F9FB;
   background-color: #31708e;
-  height: 25rem;
+  height: 27rem;
   width: 25rem;
   border-bottom-left-radius: .5rem;
   border-bottom-right-radius: .5rem;
   border-top-right-radius: .5rem;
   padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .btn {
