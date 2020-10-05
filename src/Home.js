@@ -18,10 +18,10 @@ class Home {
     infoDiv.innerHTML = `
     <ul id="info-tab" class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-            <a href="#home" class="nav-link active" >Home</a>
+            <a href="#home" class="nav-link active" >About</a>
         </li>
         <li class="nav-item">
-            <a href="#profile" class="nav-link">Profile</a>
+            <a href="#profile" class="nav-link">Project 333</a>
         </li>
         <li class="nav-item">
             <a href="#messages" class="nav-link">Messages</a>
@@ -41,9 +41,10 @@ class Home {
             <p>You can used Witchy Wardrobe to help you keep track of your wardrobe! Check out the other tabs for ideas for helping you minimize your wardrobe.</p>
         </div>
         <div class="tab-pane fade" id="profile">
-            <h4 class="mt-2">Profile tab content</h4>
-            <p>Vestibulum nec erat eu nulla rhoncus fringilla ut non neque. Vivamus nibh urna, ornare id gravida ut, mollis a magna. Aliquam porttitor condimentum nisi, eu viverra ipsum porta ut. Nam hendrerit bibendum turpis, sed molestie mi fermentum id. Aenean volutpat velit sem. Sed consequat ante in rutrum convallis. Nunc facilisis leo at faucibus adipiscing.</p>
-        </div>
+            <h4 class="mt-2">Project 333</h4>
+            <p>The premise: Wear just 33 items for 3 months and find the joy you miss out on when you spend too much time worrying about what to wear.</p>
+            <p>Check out <a class="links" href="https://bemorewithless.com/">Courtney Carver's website</a> to learn more about how to get started.</p>
+            </div>
         <div class="tab-pane fade" id="messages">
             <h4 class="mt-2">Messages tab content</h4>
             <p>Donec vel placerat quam, ut euismod risus. Sed a mi suscipit, elementum sem a, hendrerit velit. Donec at erat magna. Sed dignissim orci nec eleifend egestas. Donec eget mi consequat massa vestibulum laoreet. Mauris et ultrices nulla, malesuada volutpat ante. Fusce ut orci lorem. Donec molestie libero in tempus imperdiet. Cum sociis natoque penatibus et magnis.</p>
