@@ -32,6 +32,7 @@ function displayItems(){
     initItems();
     Item.addItemBtn();
     Item.sortAndFilter();
+    Item.vietnamBtn();
   })
 }
 
@@ -45,7 +46,7 @@ function displayOutfits(){
   })
 }
 
-function initItems(){
+const initItems = () => {
   ApiService.getAllItems()
   .then(items => {
     items.forEach( item => {
