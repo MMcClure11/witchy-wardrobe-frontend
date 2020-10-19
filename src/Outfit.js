@@ -24,6 +24,14 @@ class Outfit {
     addBtn.innerText = "Random Outfit"
     btnDiv.appendChild(addBtn)
     app.appendChild(btnDiv)
+    addBtn.addEventListener("click", () => {
+      ApiService.postOutfit()
+      .then(outfit => {
+        if(outfit.errors){
+          alert(outfit.errors)
+        } else {
+        new Outfit(outfit)}})
+        })
   }
 
   createCard(){
