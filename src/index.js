@@ -43,6 +43,7 @@ function displayOutfits(){
     itemCollection.innerHTML = "";
     initOutfits();
     Outfit.addOutfitBtn();
+    Outfit.randomOutfitBtn();
   })
 }
 

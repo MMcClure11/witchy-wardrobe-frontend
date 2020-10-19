@@ -16,6 +16,16 @@ class Outfit {
     OutfitForm.outfitModalHandler(addBtn)
   }
 
+  static randomOutfitBtn() {
+    const btnDiv = document.createElement('div')
+    const addBtn = document.createElement('button')
+    addBtn.className = 'btn'
+    addBtn.id = 'random-outfit-btn'
+    addBtn.innerText = "Random Outfit"
+    btnDiv.appendChild(addBtn)
+    app.appendChild(btnDiv)
+  }
+
   createCard(){
     const card = document.createElement('div')
     card.className = "card text-center "
