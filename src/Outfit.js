@@ -1,3 +1,5 @@
+const btnsDiv = document.createElement('div')
+
 class Outfit {
 
   constructor(outfit){
@@ -6,24 +8,28 @@ class Outfit {
   }
 
   static addOutfitBtn() {
-    const btnDiv = document.createElement('div')
+    const btnDiv = document.createElement('span')
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
     addBtn.id = 'add-outfit-btn'
     addBtn.innerText = "Create a New Outfit"
     btnDiv.appendChild(addBtn)
-    app.appendChild(btnDiv)
+    btnsDiv.appendChild(btnDiv)
+    app.appendChild(btnsDiv)
     OutfitForm.outfitModalHandler(addBtn)
   }
 
   static randomOutfitBtn() {
-    const btnDiv = document.createElement('div')
+    const btnDiv = document.createElement('span')
+    btnDiv.className = 'ml-3'
+    btnDiv.style.display = 'inline-block'
     const addBtn = document.createElement('button')
     addBtn.className = 'btn'
     addBtn.id = 'random-outfit-btn'
     addBtn.innerText = "Random Outfit"
     btnDiv.appendChild(addBtn)
-    app.appendChild(btnDiv)
+    btnsDiv.appendChild(btnDiv)
+    app.appendChild(btnsDiv)
     addBtn.addEventListener("click", () => {
       ApiService.postOutfit()
       .then(outfit => {
