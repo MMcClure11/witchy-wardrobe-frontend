@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://witchy-wardrobe-api.herokuapp.com';
 const ITEMS_URL = `${BASE_URL}/items`;
 const CATEGORY_URL = `${BASE_URL}/categories`;
 const OUTFITS_URL = `${BASE_URL}/outfits`;
