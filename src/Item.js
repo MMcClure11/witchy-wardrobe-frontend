@@ -174,7 +174,6 @@ class Item {
     }
     })
     .catch(error => alert(error))
-    // e.target.query.value = ""
   }
 
 }

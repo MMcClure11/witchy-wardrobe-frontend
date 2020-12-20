@@ -25,7 +25,6 @@ class OutfitForm {
       likes: e.target.likes.value,
       item_ids: itemIdsArray
     }
-    // console.log(newOutfit)
     ApiService.postOutfit(newOutfit)
     .then(outfit => {
       if(outfit.errors){

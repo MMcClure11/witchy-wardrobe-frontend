@@ -109,16 +109,13 @@ class Outfit {
     editOutfitForm.addEventListener("submit", (e) => {
       e.preventDefault();
       const checks = Array.from(e.target.querySelectorAll(".checks"))
-      // console.log(checks)
       const checkedItems = checks.filter( item => item.checked )
       let itemIdsArray = checkedItems.map( item => parseInt(item.id))
-      // console.log(this.outfit.id)
       const editedOutfit = {
         name: e.target.name.value,
         likes: e.target.likes.value,
         item_ids: itemIdsArray
       }
-      // console.log(editedOutfit)
       this.updateOutfitHandler(editedOutfit, card)
     })
     
@@ -140,7 +137,6 @@ class Outfit {
   }
 
   updateOutfitHandler(editedOutfit, card){
-    // console.log(this.outfit.id)
     ApiService.updateOutfit(this.outfit.id, editedOutfit)
     .then(updatedOutfit => {
       if (updatedOutfit.errors){

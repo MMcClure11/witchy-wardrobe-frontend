@@ -195,7 +195,6 @@ class ItemForm {
 
   static itemEditHandler(editBtn, editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, category){
     editBtn.addEventListener("click", () => {
-      // console.log(this.item)
       modal.style.display = "block"
       modalContent.append(editItemForm)
       ItemForm.itemFormContent(editItemForm, name, image, color, date_purchased, store, manufacture_location, cost, times_used, category)
