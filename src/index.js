@@ -32,7 +32,6 @@ function displayItems(){
     initItems();
     Item.addItemBtn();
     Item.sortAndFilter();
-    Item.vietnamBtn();
   })
 }
 

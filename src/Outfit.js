@@ -1,4 +1,4 @@
-const btnsDiv = document.createElement('div')
+// const btnsDiv = document.createElement('div')
 
 class Outfit {
 
@@ -14,8 +14,9 @@ class Outfit {
     addBtn.id = 'add-outfit-btn'
     addBtn.innerText = "Create a New Outfit"
     btnDiv.appendChild(addBtn)
-    btnsDiv.appendChild(btnDiv)
-    app.appendChild(btnsDiv)
+    // btnsDiv.appendChild(btnDiv)
+    // app.appendChild(btnsDiv)
+    app.appendChild(btnDiv)
     OutfitForm.outfitModalHandler(addBtn)
   }
 
@@ -28,8 +29,9 @@ class Outfit {
     addBtn.id = 'random-outfit-btn'
     addBtn.innerText = "Random Outfit"
     btnDiv.appendChild(addBtn)
-    btnsDiv.appendChild(btnDiv)
-    app.appendChild(btnsDiv)
+    // btnsDiv.appendChild(btnDiv)
+    // app.appendChild(btnsDiv)
+    app.appendChild(btnDiv)
     addBtn.addEventListener("click", () => {
       ApiService.postOutfit()
       .then(outfit => {

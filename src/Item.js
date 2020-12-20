@@ -50,24 +50,6 @@ class Item {
     ItemForm.itemModalHandler(addBtn)
   }
 
-  // static vietnamBtn() {
-  //   const vietnamBtn = document.createElement("button")
-  //   vietnamBtn.className = 'btn'
-  //   vietnamBtn.innerText = "Vietnam Items"
-  //   app.appendChild(vietnamBtn)
-
-  //   vietnamBtn.addEventListener("click", () => {
-  //     itemCollection.innerHTML = ""
-  //     ApiService.getAllItems()
-  //     .then(items => {
-  //       items.filter(item => item.manufacture_location === "Vietnam").forEach( item => {
-  //         new Item(item)
-  //       })
-  //     })
-  //     .catch(error => alert(error))
-  //   })
-  // }
-
   createCard(){
     const card = document.createElement('div')
     card.className = "card text-center"
