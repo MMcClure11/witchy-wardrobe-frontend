@@ -1,5 +1,3 @@
-// const btnsDiv = document.createElement('div')
-
 class Outfit {
 
   constructor(outfit){
@@ -14,9 +12,9 @@ class Outfit {
     addBtn.id = 'add-outfit-btn'
     addBtn.innerText = "Create a New Outfit"
     btnDiv.appendChild(addBtn)
-    // btnsDiv.appendChild(btnDiv)
-    // app.appendChild(btnsDiv)
-    app.appendChild(btnDiv)
+    btnsDiv.appendChild(btnDiv)
+    app.appendChild(btnsDiv)
+
     OutfitForm.outfitModalHandler(addBtn)
   }
 
@@ -29,9 +27,8 @@ class Outfit {
     addBtn.id = 'random-outfit-btn'
     addBtn.innerText = "Random Outfit"
     btnDiv.appendChild(addBtn)
-    // btnsDiv.appendChild(btnDiv)
-    // app.appendChild(btnsDiv)
-    app.appendChild(btnDiv)
+    btnsDiv.appendChild(btnDiv)
+    app.appendChild(btnsDiv)
     addBtn.addEventListener("click", () => {
       ApiService.postOutfit()
       .then(outfit => {
@@ -65,7 +62,6 @@ class Outfit {
     outfitLikes.id = 'outfit-likes'
     outfitLikes.innerText = `❤️ ${likes}`
     outfitLikes.addEventListener("click", () => {
-      // console.log(this.outfit)
       this.outfitLikesHandler(this.outfit)
     })
 

@@ -13,6 +13,7 @@ const itemsBtn = document.querySelector("#items-btn");
 const outfitsBtn = document.querySelector("#outfits-btn");
 const modal = document.querySelector("#myModal");
 const modalContent = document.querySelector(".modal-content");
+const btnsDiv = document.createElement('div');
 
 createAppDiv();
 displayItems();
@@ -28,6 +29,7 @@ function createAppDiv() {
 function displayItems(){
   itemsBtn.addEventListener("click", () => {
     app.innerHTML = "";
+    btnsDiv.innerHTML = "";
     body.style.backgroundImage = "url(https://images.unsplash.com/photo-1483232539664-d89822fb5d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80)"
     initItems();
     Item.addItemBtn();
