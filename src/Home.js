@@ -42,7 +42,7 @@ class Home {
               <li>Shop locally</li>
               <li>Find sustainable and ethical clothing brands</li>
             </ul>
-            <p>You can used Witchy Wardrobe to help you keep track of your wardrobe! Check out the other tabs for ideas for helping you minimize your wardrobe.</p>
+            <p>You can use Witchy Wardrobe to help you keep track of your wardrobe! Check out the other tabs for ideas for helping you minimize your wardrobe.</p>
         </div>
         <div class="tab-pane fade" id="profile">
             <h4 class="mt-2">Project 333</h4>
